@@ -1,0 +1,9 @@
+1、初始化系统模块以及相应权限：在Globals.java中ISINIT_MODULE_PRIVILEGE值设置成true;
+2、如初始化需创建角色信息：在Globals.java中ISCREATE_ADMIN_ROLE_USER值设置成true，
+	ROLE_CODE值对应会员系统角色编号，ROLE_NAME为待创建的角色名称;（慎用）
+3、系统初始化执行路径：http://localhost:8080/omall/system/init!init?sign=TYT57GFR68IJGT8EOMFMU8WR87326GFS
+http://localhost:8080/TimeManager/system/init!init?sign=TYT57GFR68IJGT8EOMFMU8WR87326GFS
+4、删除系统自带struts2包
+	antlr-2.7.2.jar
+	struts2-convention-plugin-2.1.8.jar
+	struts2-json-plugin-2.1.8.jar

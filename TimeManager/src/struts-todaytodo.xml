@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 今日待办 -->
+	<package name="todayTodo-supermanxkq" namespace="/todayTodo"
+		extends="globalResult">
+		<default-action-ref name="todayTodo" />
+		<action name="todayTodo" class="/todayTodo/todayTodo">
+			<result name="input">/WEB-INF/page/todaytodo/todaytodoSet.jsp
+			</result>
+			<result name="list">/WEB-INF/page/todaytodo/todaytodoList.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

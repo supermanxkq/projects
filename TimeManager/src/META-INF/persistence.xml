@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	
+	<persistence-unit name="xxpt" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/> -->
+			    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+			    <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/> -->
+			    <!--
+			    <property name="hibernate.connection.driver_class" value="org.gjt.mm.mysql.Driver"/>
+				<property name="hibernate.connection.username" value="root"/>
+				<property name="hibernate.connection.password" value="mciu"/>
+				<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"/>
+			-->
+			<!-- addition by kangtj (comment: usualy set to PAGE_SIZE )-->
+			<property name="hibernate.default_batch_fetch_size" value="20"/>
+			<property name="hibernate.connection.SetBigStringTryClob" value="true" />
+			<property name="hibernate.c3p0.acquireRetryAttempts" value="30" />
+			
+			<!-- 设置外连接抓取树的最大深度取值. 建议设置为0到3之间 -->
+			<property name="hibernate.max_fetch_depth" value="3" />
+			<!--<property name="hibernate.hbm2ddl.auto" value="update" />-->
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<!-- 设定读取数据的时候每次从数据库中取出的记录条数 -->
+			<property name="hibernate.jdbc.fetch_size" value="100" />
+			<!-- 设定对数据库进行批量删除，批量更新和批量插入的时候的批次大小，有点相当于设置Buffer缓冲区大小的意思 -->
+			<property name="hibernate.jdbc.batch_size" value="50" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"></property>
+			<!-- <property name="hibernate.cache.provider_class" value="net.sf.ehcache.hibernate.EhCacheProvider" /> -->
+        	<property name="hibernate.cache.provider_class" value="org.hibernate.cache.OSCacheProvider"></property>
+			<property name="hibernate.cache.use_query_cache" value="true"></property>
+			<property name="hibernate.connection.characterEncoding" value="UTF-8"></property>
+		</properties>
+
+		<!--  
+			<provider>oracle.toplink.essentials.PersistenceProvider</provider>
+			<class>com.itcast.bean.book.Order</class>
+			<class>com.itcast.bean.book.OrderContactInfo</class>
+			<class>com.itcast.bean.book.OrderDeliverInfo</class>
+			<class>com.itcast.bean.book.OrderItem</class>
+			<class>com.itcast.bean.user.Buyer</class>
+			<class>com.itcast.bean.user.ContactInfo</class>
+			<class>com.itcast.bean.product.ProductInfo</class>
+			<class>com.itcast.bean.product.ProductStyle</class>
+			<class>com.itcast.bean.product.ProductType</class>
+			<class>com.itcast.bean.product.Brand</class>
+			<properties>
+			下面设置deploy生成数据库表,undeploy时删除表,同类属性还有create-tables,none   
+			<property name="toplink.ddl-generation" value="none"/>
+			配置日志
+			OFF - disable logging
+			SEVERE - Logs exceptions indicating TopLink cannot continue, as well as any exceptions generated during login. This includes a stack trace.
+			WARNING - Logs exceptions that do not force TopLink to stop, including all exceptions not logged with severe level. This does not include a stack trace.
+			INFO - Logs the login/logout per sever session, including the user name. After acquiring the session, detailed information is logged.
+			CONFIG - Logs only login, JDBC connection, and database information.
+			FINE - Logs SQL.
+			FINER - Similar to warning. Includes stack trace.
+			FINEST - Includes additional low level information.
+			
+			<property name="toplink.logging.level" value="FINE"/> 
+			<property name="toplink.target-database"  value="Auto"/>
+			<property name="toplink.jdbc.driver" value="org.gjt.mm.mysql.Driver"/>		
+			<property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/itcasttwo?useUnicode=true&amp;characterEncoding=UTF-8"/>
+			<property name="toplink.jdbc.user" value="root"/>
+			<property name="toplink.jdbc.password" value="123456"/>		
+			</properties>
+		-->
+	</persistence-unit>
+</persistence>

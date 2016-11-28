@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="member-j" namespace="/member" extends="globalResult">   
+    	<!--  会员管理-->
+    	<action name="member" class="/member/member">
+			<result name="list">/WEB-INF/page/member/member/memberList.jsp</result>
+			<!-- <result name="input">/WEB-INF/page/member/member/memberSet.jsp</result> -->
+			<result name="input">/WEB-INF/page/member/member/memberEdit.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package> 
+    <package name="cardLevel-j" namespace="/cardLevel" extends="globalResult"> 
+		<!-- 卡等级管理-->
+    	<action name="cardLevel" class="/cardLevel/cardLevel">
+			<result name="list">/WEB-INF/page/member/cardLevel/cardLevelList.jsp</result>
+			<result name="input">/WEB-INF/page/member/cardLevel/cardLevelSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>  
+     <package name="cmemCard-j" namespace="/memCard" extends="globalResult"> 
+		<!-- 会员卡信息管理-->
+    	<action name="memCard" class="/memCard/memCard">
+			<result name="list">/WEB-INF/page/member/memCards/memCardList.jsp</result>
+			<result name="input">/WEB-INF/page/member/memCards/memCardSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+	<package name="recharge-j" namespace="/order" extends="globalResult"> 
+		<!--充值订单管理-->
+    	<action name="recharge" class="/order/recharge">
+			<result name="list">/WEB-INF/page/order/singleRech/recOrderList.jsp</result>
+			<result name="input">/WEB-INF/page/order/singleRech/recOrderSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    </package>
+    <package name="statement-j" namespace="/statement" extends="globalResult"> 
+		<!-- 充值订单报表-->
+    	<action name="rechStatement" class="/statement/rechStatement">
+			<result name="list">/WEB-INF/page/report/rechStatement.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+    <package name="card-j" namespace="/card" extends="globalResult"> 
+		<!-- 退卡订单管理-->
+    	<action name="cardReturn" class="/card/cardReturn">
+			<result name="list">/WEB-INF/page/card/cardReturn/cardReturnList.jsp</result>
+			<result name="input">/WEB-INF/page/card/cardReturn/cardReturnSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+   <package name="orderLimit-j" namespace ="/order" extends="globalResult"> 
+		<action name="orderLimit" class="/order/orderLimit">
+			<result name="list">/WEB-INF/page/order/orderLimit/orderLimitList.jsp</result>
+			<result name="input">/WEB-INF/page/order/orderLimit/orderLimitSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+     <package name="batchSale-j" namespace ="/order" extends="globalResult"> 
+    	<action name="batchSale" class="/order/batchSale">
+			<result name="input">/WEB-INF/page/order/batchSale/batchSaleSet.jsp</result>
+			<result name="list">/WEB-INF/page/order/saleOrders/saleOrdersList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+     <package name="chequeDispose-j" namespace ="/order" extends="globalResult"> 
+    	<action name="chequeDispose" class="/order/chequeDispose">
+			<result name="list">/WEB-INF/page/order/chequeDispose/chequeDisposeList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+    <package name="bail-j" namespace ="/base" extends="globalResult"> 
+    	<action name="bail" class="/base/bail">
+			<result name="list">/WEB-INF/page/base/bail/bailList.jsp</result>
+			<result name="input">/WEB-INF/page/base/bail/bailSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+    <package name = "oilType-j" namespace = "/base" extends = "globalResult" >
+    	<action name = "oilType" class = "/base/oilType" >
+    		<result  name = "list" >/WEB-INF/page/base/oilType/oilTypeList.jsp</result>
+    		<result  name = "input" >/WEB-INF/page/base/oilType/oilTypeSet.jsp</result>
+    	</action>
+    </package>
+      <package name = "getCash-j" namespace = "/trade" extends = "globalResult" >
+    	<action name = "getCash" class = "/trade/getCash" >
+    		<result  name = "list" >/WEB-INF/page/trade/getCash/getCashList.jsp</result>
+    		<result  name = "input" >/WEB-INF/page/trade/getCash/getCashSet.jsp</result>
+    	</action>
+    </package>
+      <package name = "turnCash-j" namespace = "/trade" extends = "globalResult" >
+    	<action name = "turnCash" class = "/trade/turnCash" >
+    		<result  name = "list" >/WEB-INF/page/trade/turnCash/turnCashList.jsp</result>
+    		<result  name = "input" >/WEB-INF/page/trade/turnCash/turnCashSet.jsp</result>
+    	</action>
+    </package>
+	</struts>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="base-cj" namespace="/base" extends="globalResult">
+		<action name="goods" class="/base/goods">
+			<result name="list">/WEB-INF/page/goods/itemList.jsp</result>
+			<result name="input">/WEB-INF/page/goods/itemSet.jsp</result>
+			<result name="dealpage">/WEB-INF/page/goods/deal.jsp</result>
+			<result name="edit">/WEB-INF/page/goods/itemEdit.jsp</result>
+		</action>   
+		
+		<action name="delivery" class="/base/delivery">
+			<result name="list">/WEB-INF/page/deliver/deliveryList.jsp</result>
+			<result name="ddetail">/WEB-INF/page/deliver/deliveryOrderDetail.jsp</result>
+			<result name="delieverp">/WEB-INF/page/deliver/deliverypage.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>   
+    </package>
+</struts>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+
+	<package name="stock-zgf" namespace="/stock" extends="globalResult">
+		<!-- 加油站油量库存微调管理-总部入库 -->
+		<action name="stockAdjustment" class="/stock/stockAdjustment">
+			<result name="list">/WEB-INF/page/stock/oilAdjustment/oilAdjustmentList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/oilAdjustment/oilAdjustmentSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+	<package name="message-zgf" namespace="/message" extends="globalResult">
+		<!-- 短信发送模块 -->
+		<action name="shortMesSend" class="/message/shortMesSend">
+			<result name="list">/WEB-INF/page/message/smsList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/message/smsSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

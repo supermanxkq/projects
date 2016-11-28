@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="base-zjl" namespace="/base" extends="globalResult">
+		<action name="merscomo" class="/base/merscomo">
+			<result name="list">/WEB-INF/page/base/merscomo/merScoMoList.jsp</result>	
+			<result name="input">/WEB-INF/page/base/merscomo/merScoMoSet.jsp</result>	
+			
+		</action>   
+    </package>
+</struts>

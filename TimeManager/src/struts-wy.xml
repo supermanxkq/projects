@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="cardblack-wy" namespace="/card" extends="globalResult">
+		<!-- 黑名单 -->
+    	<action name="black" class="/card/black">
+			<result name="list">/WEB-INF/page/card/cardBlack/cardBlack.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>    
+</struts>

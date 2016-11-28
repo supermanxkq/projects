@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 全站公告管理管理 -->
+	<package name="marketing-annount" namespace="/marketing" extends="globalResult">   
+	   	<!-- 公告查看 -->
+    	<action name="annount" class="/marketing/annount">
+			<result name="list">/WEB-INF/page/marketing/annount/annountList.jsp</result>
+			<result name="input">/WEB-INF/page/marketing/annount/annountSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+</struts>

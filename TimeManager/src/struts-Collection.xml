@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 收集箱管理 -->
+	<package name="collection-supermanxkq" namespace="/collection"
+		extends="globalResult">
+		<default-action-ref name="collection" />
+		<action name="collection" class="/collection/collection">
+			<result name="input">/WEB-INF/page/collection/CollectionSet.jsp
+			</result>
+			<result name="list">/WEB-INF/page/collection/CollectionList.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>
