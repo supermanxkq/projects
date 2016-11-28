@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 报表管理 -->
+	<package name="report" namespace="/report" extends="globalResult">   
+	   	<!-- 报表查看查看 -->
+	     
+    	<action name="saleCardRecord" class="/report/saleCardRecord">
+			<result name="list">/WEB-INF/page/report/saleCardRecord.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	<action name="merconstotal" class="/report/merconstotal">
+			<result name="list">/WEB-INF/page/report/merConsList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>   
+    	
+    	<action name="organSettTotal" class="/report/organSettTotal">
+			<result name="list">/WEB-INF/page/report/organSettTotal.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+	   	
+	   
+    </package>
+</struts>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<init-config>
+	<!-- <main-module id="sy-2000" name="用户管理" sortorder="2000"> -->
+	<!-- <mid-module id="sy-2100" name="用户管理" sortorder="2100" -->
+	<!-- isOften="1"> -->
+	<!-- </mid-module> -->
+	<!-- <mid-module id="sy-1200" name="用户管理" sortorder="1200" -->
+	<!-- isOften="1"> -->
+	<!-- <module id="sy-1201" name="用户管理" linkaddr="base/merchants" -->
+	<!-- sortorder="1201"> -->
+	<!-- <privilege id="sy-1201-01" name="商户查看"></privilege> -->
+	<!-- <privilege id="sy-1201-02" name="商户添加"></privilege> -->
+	<!-- <privilege id="sy-1201-03" name="商户修改"></privilege> -->
+	<!-- <privilege id="sy-1201-04" name="商户删除"></privilege> -->
+	<!-- </module> -->
+	<!-- </mid-module> -->
+	<!-- </main-module> -->
+	<main-module id="sy-1000" name="代码库" sortorder="1000">
+		<mid-module id="sy-1100" name="代码库" sortorder="1100"
+			isOften="1">
+			<module id="sy-1101" name="代码管理" linkaddr="code/code!listB"
+				sortorder="1101">
+				<privilege id="sy-1101-01" name="代码添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1101-02" name="代码删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-1101-03" name="代码修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1101-04" name="代码查询" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-1102" name="分类管理" linkaddr="codestyle/codestyle"
+				sortorder="1102">
+				<privilege id="sy-1102-01" name="分类添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1102-02" name="分类删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-1102-03" name="分类修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1102-04" name="分类查询" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+	<main-module id="sy-2000" name="软件库" sortorder="2000">
+		<mid-module id="sy-2100" name="软件库" sortorder="2100"
+			isOften="1">
+			<module id="sy-2101" name="软件管理" linkaddr="software/software!listB"
+				sortorder="2101">
+				<privilege id="sy-2101-01" name="软件添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-2101-02" name="软件删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-2101-03" name="软件修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-2101-04" name="软件查询" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-2102" name="分类管理" linkaddr="softwarestyle/softwarestyle"
+				sortorder="2102">
+				<privilege id="sy-2102-01" name="分类添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-2102-02" name="分类删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-2102-03" name="分类修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-2102-04" name="分类查询" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+	<main-module id="sy-3000" name="博客" sortorder="3000">
+		<mid-module id="sy-3100" name="博客" sortorder="3100"
+			isOften="1">
+			<module id="sy-3101" name="博客管理" linkaddr="article/article!listB"
+				sortorder="3101">
+				<privilege id="sy-3101-01" name="博客添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-3101-02" name="博客删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-3101-03" name="博客修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-3101-04" name="博客查询" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-3102" name="分类管理" linkaddr="articletype/articletype"
+				sortorder="3102">
+				<privilege id="sy-3102-01" name="分类添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-3102-02" name="分类删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-3102-03" name="分类修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-3102-04" name="分类查询" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+
+
+	<main-module id="sy-9000" name="系统维护" sortorder="9000">
+		<mid-module id="sy-9100" name="操作员管理" sortorder="9100">
+			<module id="sy-9101" name="模块管理" linkaddr="system/module"
+				sortorder="9101">
+				<privilege id="sy-9101-01" name="模块查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-9101-02" name="模块维护" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-9102" name="角色管理" linkaddr="system/role"
+				sortorder="9102">
+
+				<privilege id="sy-9102-01" name="角色查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-9102-02" name="角色添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-9102-03" name="角色修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-9102-04" name="角色删除" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-9103" name="用户管理" linkaddr="system/user"
+				sortorder="9103">
+				<privilege id="sy-9103-01" name="用户查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-9103-02" name="用户添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-9103-03" name="用户修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-9103-04" name="用户删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-9103-05" name="初始化密码" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-9700" name="日志管理" sortorder="9700">
+			<module id="sy-9701" name="操作日志" linkaddr="log/operators"
+				sortorder="9701">
+				<privilege id="sy-9701-01" name="操作日志查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-9701-02" name="操作日志删除" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-9702" name="功能日志" linkaddr="log/functions"
+				sortorder="9702">
+				<privilege id="sy-9702-01" name="功能日志查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-9702-02" name="功能日志删除" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+</init-config>

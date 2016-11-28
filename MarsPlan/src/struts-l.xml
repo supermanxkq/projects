@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+    <package name="report-l" namespace="/report" extends="globalResult">   
+   	
+   	 <!-- 商户充值累计查询-交易报表 -->
+   	<action name="rechargetotalview" class="/report/rechargetotalview">
+		<result name="list">/WEB-INF/page/report/RechargeTotalViewList.jsp</result>
+		<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+   	</action> 
+   	</package>
+</struts>

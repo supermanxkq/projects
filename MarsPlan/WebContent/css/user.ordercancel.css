@@ -1,0 +1,54 @@
+.cancle-box{margin:10px 20px;line-height:20px}.cancle-box .tip-box{padding:5px 0 0 58px;position:relative;min-height:50px;_height:50px;margin:0 0 20px 20px}.cancle-box .tip-box .warn-icon,.cancle-box .tip-box .succ-icon{display:block;position:absolute;top:0;left:0;width:48px;height:100%;background:url(images/warn.png) center no-repeat}
+.cancle-box .tip-box .succ-icon{background:url(i/succ.png) center no-repeat}
+.cancle-box .tip-box h3{margin:5px 0 0;font-size:16px}
+.cancle-box .item-area{padding:0 0 0 32px;position:relative}.cancle-box .item-area textarea.area{float:none;border:1px solid #ccc;width:300px;height:68px;padding:5px;margin:10px 0 0 -20px;overflow-y:auto}
+.cancle-box .item{padding:0 0 0 32px;position:relative;z-index:2}.cancle-box .item .label{line-height:30px;width:70px}
+.cancle-box .item .text{border:1px solid #ccc;line-height:18px}
+.cancle-box .item .text1{width:70px}
+.cancle-box .item .gray{color:#999}
+.cancle-box .item .cont-text{position:relative;width:178px;height:18px;line-height:18px;padding:5px 25px 5px 5px;border:1px solid #ccc;background:#fff}.cancle-box .item .cont-text b{display:inline-block;position:absolute;top:11px;right:5px;width:11px;height:9px;background:url(../images/arrdown.png) no-repeat}
+.cancle-box .item .content{position:absolute;display:none;z-index:2;top:29px;left:0;width:300px;height:auto;padding:5px;border:1px solid #ccc;background:#fff;overflow:hidden}.cancle-box .item .content input,.cancle-box .item .content label{float:none}
+.cancle-box .item .content .dd2 span{float:left;width:149px;overflow:hidden}
+.cancle-box .item .cont-error{border:1px solid #e4393c}
+.cancle-box .tip-msg{margin:10px 0;font-family:'\5b8b\4f53'}
+.cancle-box .op-btns{text-align:center;margin:0px 0 0}.cancle-box .op-btns .btn{margin:0 10px 0 0}
+.cancle-box .tab-box .mt{overflow:visible}
+.cancle-box .tab-box .tab{border:0;height:26px;border-bottom:1px solid #ccc;overflow:visible;padding:0;background:none}.cancle-box .tab-box .tab li{background:#f7f7f7;border:1px solid #ccc;border-bottom:0;height:25px;line-height:26px;margin:0 10px 0 0}.cancle-box .tab-box .tab li.curr{background:#fff;position:relative;z-index:1;top:1px;line-height:29px;height:30px;margin-top:-5px}
+.cancle-box .tab-box .mc{border:1px solid #ccc;border-top:0;padding:10px}
+.paydetail-box{width:585px;margin:20px auto}.paydetail-box .item{margin:0 0 10px}
+.paydetail-box .tb-void{margin:10px 0;overflow:visible}.paydetail-box .tb-void table{width:100%}
+.paydetail-box .tb-void th{background:#f7f7f7;border-top:1px solid #ddd}
+.paydetail-box .tb-void td{border:none;text-align:left;line-height:22px;border-top:1px solid #ddd}
+.paydetail-box .tb-void .return-msg{width:260px}
+.paydetail-box .pdetail dd{float:left}.paydetail-box .pdetail dd.fore1{width:60px;margin:0 0 0 20px}
+.paydetail-box .account-box{position:relative}.paydetail-box .account-box .item1{z-index:5}
+.paydetail-box .account-box .label{text-align:right;width:60px;margin:0 5px 0 0}
+.paydetail-box .account-box .text{width:210px}
+.paydetail-box .account-box .repeat-num{background:#f0f0f0;height:32px;line-height:32px;font-size:16px;font-weight:bold;width:265px;padding:0 10px}
+.paydetail-box .account-box .content{top:28px;left:-95px;width:455px;padding:15px;overflow:visible}
+.paydetail-box .account-box .close{position:absolute;z-index:2;top:-9px;right:-9px;width:17px;height:17px;background:url(http://misc.360buyimg.com/product/skin/2012/i/newicon20130617.png) -257px -86px;cursor:pointer}
+.account-box .tab{width:100%;height:25px;float:left;padding:0;border:0;border-bottom:2px solid #edd28b;overflow:visible;*overflow:hidden;background:none}
+.account-box .tab li{float:left;clear:none;padding:0;background:none;border:0;margin:0}
+.account-box .tab li em{color:#005ea7;font-weight:normal}
+.account-box .tab a i{background-image:url(http://misc.360buyimg.com/product/skin/2012/i/jd-stock.png);background-repeat:no-repeat;position:absolute;right:4px;top:10px;display:block;width:7px;height:5px;overflow:hidden;background-position:0 -35px}
+.account-box .tab li.curr{border:0;margin:0}
+.account-box .item .cont-text{width:188px;z-index:3;background:#fff;overflow:hidden;white-space:nowrap}
+.account-box .item .cont-text div{width:188px;text-overflow:ellipsis;overflow:hidden}
+.account-box .item .cont-text-hover{border-bottom:0}
+.account-box .tab .curr a{color:#000}
+.account-box .tab a,.account-box .tab .curr a{position:relative;float:left;height:23px;line-height:23px;padding:0 21px 1px 11px;margin-right:3px;border:1px solid #ddd;border-bottom:0;color:#ccc;text-align:center;cursor:pointer}
+.account-box .tab .curr a{height:25px;background-color:#fff;border:2px solid #edd28b;border-bottom:0;padding:0 20px 0 10px;line-height:22px;text-decoration:none;color:#000}
+.account-box .tab a:hover i{top:10px;right:4px;background-position:0 -28px;*top:9px}
+.account-box .area-list li{padding:2px 0 2px 15px;clear:none}
+.account-box .area-list a:hover{color:#fff}
+.area-list{padding-top:5px}
+.area-list li{float:left;width:80px;padding:2px 0 2px 15px;clear:none}
+.area-list li a{float:left;padding:2px 4px;color:#005aa0}
+.area-list li a:hover{background:#005ea7;color:#fff}
+.area-list .longer-area{width:370px}
+.area-list .long-area{width:170px}
+.paydetail-box .pdetail:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.paydetail-box .pdetail{display:inline-table}
+*html .paydetail-box .pdetail{height:1%}
+.paydetail-box .pdetail{display:block}
+*+html .paydetail-box .pdetail{min-height:1%}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 报表管理 -->
+	<package name="report-wn" namespace="/finished" extends="globalResult">
+		<!-- 已完成 -->
+		<action name="finished" class="/finished/finished">
+			<result name="list">/WEB-INF/page/report/finishedList.jsp</result>
+			<result name="input">/WEB-INF/page/report/CollectionSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

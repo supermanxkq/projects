@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 售卡订单管理 -->
+	<package name="order" namespace="/order" extends="globalResult">   
+	   	<!-- 售卡订单查看 -->
+	     
+    	<action name="saleorders" class="/order/saleorders">
+			<result name="list">/WEB-INF/page/order/saleOrders/saleOrdersList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+	   	
+	   
+	    <!-- 单张售卡订单管理 -->
+    	<action name="singlesale" class="/order/singlesale">
+<!--			<result name="list">/WEB-INF/page/order/singleSale/singleSaleList.jsp</result>-->
+			<result name="input">/WEB-INF/page/order/singleSale/singleSaleSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>    
+    	
+    </package>
+</struts>

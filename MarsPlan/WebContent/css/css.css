@@ -1,0 +1,156 @@
+@charset "utf-8";
+body, h1, h2, h3, h4, h5, h6, hr, p, form, blockquote, dl, dd, pre {
+	margin:0;
+}
+button, th, td {
+	padding:0;
+}
+ul, ol, textarea, input {
+	margin:0;
+	padding:0;
+}
+ul, ol {
+	list-style: none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+fieldset, img {
+	border:0;
+}
+select, input, img, select {
+	vertical-align:middle;
+}
+.button {
+	color:#fff;
+}
+input {
+}
+select, textarea {
+}
+h2 {
+	font-family:"微软雅黑";
+	font-weight:700;
+}
+body {
+	font:12px/1.5em "微软雅黑";
+	color:#000;
+	background:#402222;
+}
+a {
+	text-decoration: none;
+}
+a:hover,a:visited {
+	text-decoration: none;
+	color:#696969;
+}
+.clear {
+	clear:both;
+}
+/*----------------------------------top----------------------------------*/
+.header {
+	height:65px;
+	margin: 0 auto;
+	background:#016292;
+}
+
+.header .top .logo {
+	float: left;
+	height: 100%;
+	padding-left: 10px;
+	padding-right: 34px;
+
+	width: 150px;
+}
+.nav {
+	float:left;
+}
+.nav li {
+	float: left;
+	height: 66px;
+	line-height: 50px;
+}
+.nav li a {
+	color: #FFFFFF;
+	display: block;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	padding: 7px 30px;
+}
+.nav li a:hover,a:visited {
+	background:#819DC1;
+	text-decoration:none;
+}
+.nav li a:ctive{
+	background:#6b4545;
+	text-decoration:none;
+}
+.seleli a {
+	background:#016292;
+}
+
+
+.ulogo{ padding-top:3px;}
+
+
+#top_links {
+	width: 200px;
+	height: 65px;
+	float: right;
+	line-height: 65px;
+	color: #ADADAD;
+	line-height: 70px;
+	position: relative;
+}
+
+#top_op {
+	width: 100px;
+}
+#top_op ul {
+	list-style-type: none;
+}
+
+#top_op ul li {
+	height:100;
+	text-align:center;
+	
+}
+
+#top_op ul li img {
+	vertical-align: text-top;
+	text-align:center;
+}
+
+#top_links a:link,#nav_links a:visited,#nav_links a:hover,#nav_links a:active
+	{
+	list-style: none;
+	text-decoration: none;
+	color: #fff;
+}
+
+#top_links a:hover {
+	list-style: none;
+	text-decoration: underline;
+	color: #fff;
+}
+
+#top_close {
+	width: 80px;
+	height:100px;
+	position: absolute;
+	right: 0px;
+	top: 15px;
+	border-left: 1px solid #171717;
+	vertical-align: text-top;
+}
+
+
+
+
+
+

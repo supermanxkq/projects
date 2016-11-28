@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 订单审批管理 -->
+    <package name="order-m" namespace="/review" extends="globalResult">
+    	<action name="reviewRecord" class="/order/reviewRecord">
+			<result name="list">/WEB-INF/page/order/review/reviewList.jsp</result>
+			<result name="input">/WEB-INF/page/order/review/reviewSet.jsp</result>
+			<result name="no">/intercepthtml.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+    <!-- 邮件发送 -->
+    <package name="mail-m" namespace="/mail" extends="globalResult">
+    	<action name="mail" class="/mail/mail">
+    		<result name="list">/WEB-INF/page/mail/memberMail.jsp</result>
+    		<result name="no">/intercepthtml.jsp</result>
+    	</action>
+    	<action name="groupMail" class="/mail/groupMail">
+    		<result name="list">/WEB-INF/page/mail/groupMail.jsp</result>
+    		<result name="no">/intercepthtml.jsp</result>
+    	</action>
+    	<action name="holidayMail" class="/mail/holidayMail">
+    		<result name="list">/WEB-INF/page/mail/holidayMail.jsp</result>
+    		<result name="no">/intercepthtml.jsp</result>
+    	</action>
+    	<action name="record" class="/mail/record">
+    		<result name="list">/WEB-INF/page/mail/mailRecord.jsp</result>
+    		<result name="no">/intercepthtml.jsp</result>
+    	</action>
+    	<action name="birthday" class="/mail/birthday">
+    		<result name="list">/WEB-INF/page/mail/birthdayMail.jsp</result>
+    		<result name="no">/intercepthtml.jsp</result>
+    	</action>
+    </package>
+</struts>
