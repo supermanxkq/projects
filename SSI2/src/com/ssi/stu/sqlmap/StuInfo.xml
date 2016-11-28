@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="basic">
+	<typeAlias alias="StuInfo" type="com.ssi.stu.bo.StuInfo" />
+	<typeAlias alias="StudentDetail" type="com.ssi.stu.bo.StudentDetail" />
+
+
+	<resultMap id="StuInfoResult" class="StuInfo">
+		<result property="stuId" column="stuId" />
+		<result property="stuName" column="stuName" />
+		<result property="age" column="age" />
+		<result property="sex" column="sex" />
+		<result property="email" column="email" />
+		<result property="mobile" column="mobile" />
+		<result property="address" column="address" />
+		<result property="studentDetail" column="studentDetail" select="basic.findHobbyById" />
+	</resultMap>
+
+
+	<!-- <resultMap id="StuResult" class="StuInfo"> -->
+	<!-- <result property="stuId" column="stuId" /> -->
+	<!-- <result property="stuName" column="stuName" /> -->
+	<!-- <result property="age" column="age" /> -->
+	<!-- <result property="sex" column="sex" /> -->
+	<!-- <result property="email" column="email" /> -->
+	<!-- <result property="mobile" column="mobile" /> -->
+	<!-- <result property="address" column="address" /> -->
+	<!-- <result property="studentDetail" column="studentDetail" select="basic.findHobbyById" 
+		/> -->
+	<!-- </resultMap> -->
+
+	<select id="selectAllStuInfo" resultMap="StuInfoResult"
+		parameterClass="StuInfo">
+		<!-- select * from stuInfo si,studentdetail sd -->
+		<!-- <dynamic prepend="where"> -->
+		<!-- 如果外键不为空 -->
+		<!-- <isNotEmpty prepend="and" property="studentDetail.hobby"> -->
+		<!-- sd.hobby=#studentDetail.hobby# -->
+		<!-- </isNotEmpty> -->
+		<!-- </dynamic> -->
+
+		select * from (
+		select stu.*, detail.hobby
+		from stuinfo stu
+		left join
+		studentdetail detail
+		on stu.studentDetail = detail.studentDetailId
+		) sub
+		<dynamic prepend="where">
+			<!-- 如果外键不为空 -->
+			<isNotEmpty prepend="and" property="studentDetail.hobby">
+				sub.hobby=#studentDetail.hobby#
+			</isNotEmpty>
+		</dynamic>
+		<!-- where sub.hobby = '跑步'; -->
+	</select>
+	<select id="findHobbyById" resultClass="StudentDetail"
+		parameterClass="int">
+		select * from StudentDetail where
+		studentDetailId=#studentDetailId#
+	</select>
+	<insert id="insertStuInfo" parameterClass="StuInfo">
+		insert into
+		StuInfo(stuId,stuName,age,sex,email,mobile,address,studentDetail)
+		values(#stuId#,#stuName#,#age#,#sex#,#email#,#mobile#,#address#,#studentDetail.studentDetailId#)
+	</insert>
+
+	<update id="updateStuInfoById" parameterClass="StuInfo">
+		update stuInfo set
+		stuName=#stuName#,
+		age=#age#,
+		sex=#sex#,
+		email=#email#,
+		mobile=#mobile#,
+		address=#address#,
+		studentDetail=#studentDetail.studentDetailId#
+		where
+		stuId=#stuId#
+	</update>
+	<delete id="deleteStuInfoById" parameterClass="int">
+		delete from
+		stuInfo where stuId=#id#
+	</delete>
+	<select id="findStuInfoById" resultMap="StuInfoResult"
+		parameterClass="int">
+		select
+		stuId,stuName,age,sex,email,mobile,address,studentDetail from
+		stuInfo
+		where stuId=#id#
+	</select>
+	<sql id="insert_sql">
+		select * from stuinfo_ b
+		<dynamic prepend="where">
+			<isEqual property="isHave" compareValue="0">
+				b.age=22
+			</isEqual>
+		</dynamic>
+	</sql>
+
+	<insert id="insertStuInfoByMap" parameterClass="java.util.HashMap">
+		insert into
+		stuinfo(stuId,stuName,age,sex,email,mobile,address,studentDetail)
+		select stuId,stuName,age,sex,email,mobile,address,studentDetail from
+		(
+		<!-- 引用外面的SQL语句 -->
+		<include refid="insert_sql" />
+		) a
+	</insert>
+
+	<insert id="batchAdd" parameterClass="java.util.HashMap">
+		insert into
+		stuinfo(stuId,stuName,age,sex,email,mobile,address,studentDetail)
+		values(#stuId#,#stuName#,#age#,#sex#,#email#,#mobile#,#address#,#studentDetail#)
+	</insert>
+</sqlMap>
+
+
+

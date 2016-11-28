@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="base" namespace="/base" extends="globalResult">
+    	<!-- 发卡机构管理 -->
+    	<action name="organs" class="/base/organs">
+			<result name="list">/WEB-INF/page/base/organs/organsList.jsp</result>
+			<result name="input">/WEB-INF/page/base/organs/organsSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	<!-- 商户管理 -->
+    	<action name="merchants" class="/base/merchants">
+			<result name="list">/WEB-INF/page/base/merchants/merchantsList.jsp</result>
+			<result name="input">/WEB-INF/page/base/merchants/merchantsSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+        <!-- 物流公司信息管理 -->
+    	<action name="logistics" class="/base/logistics">
+			<result name="list">/WEB-INF/page/base/logistics/logisticsList.jsp</result>
+			<result name="input">/WEB-INF/page/base/logistics/logisticsSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="brand" class="/base/brand">
+			<result name="input">/WEB-INF/page/base/brand/brandSet.jsp</result>
+			<result name="list">/WEB-INF/page/base/brand/brandList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>   
+    	<!-- 司机信息管理 -->
+    	<action name="driver" class="/base/driver">
+			<result name="list">/WEB-INF/page/base/driver/driverList.jsp</result>
+			<result name="input">/WEB-INF/page/base/driver/driverSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	<action name="goods" class="/base/goods">
+			<result name="list">/WEB-INF/page/goods/itemList.jsp</result>
+			<result name="input">/WEB-INF/page/goods/itemSet.jsp</result>
+			<result name="dealpage">/WEB-INF/page/goods/deal.jsp</result>
+			<result name="edit">/WEB-INF/page/goods/itemEdit.jsp</result>
+		</action>   
+    </package>
+    <package name="log" namespace="/log" extends="globalResult">
+    	<!-- 操作日志 -->
+    	<action name="operators" class="/log/operators">
+			<result name="list">/WEB-INF/page/log/operators/operatorsList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	<!-- 功能日志 -->
+    	<action name="functions" class="/log/functions">
+			<result name="list">/WEB-INF/page/log/functions/functionsList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    </package>
+   
+</struts>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts_stuinfo" extends="base">
+		<action name="save" class="stuInfoAction" method="save">
+			<result name="success" type="redirectAction">
+				queryAll
+			</result>
+			<result name="error">
+				/WEB-INF/pages/test/error.jsp
+			</result>
+		</action>
+		<action name="addUI" class="stuInfoAction" method="addUI">
+			<result name="success">
+				/WEB-INF/pages/test/addStuinfo.jsp
+			</result>
+		</action>
+		<action name="queryAll" class="stuInfoAction" method="queryAll">
+			<result name="success">
+				/WEB-INF/pages/test/showStuinfo.jsp
+			</result>
+		</action>
+		<action name="editUI" class="stuInfoAction" method="editUI">
+			<result name="success">
+				/WEB-INF/pages/test/updateStuinfo.jsp
+			</result>
+		</action>
+		<action name="updateStuInfoById" class="stuInfoAction" method="updateStuInfoById">
+			<result name="success" type="redirectAction">
+				queryAll
+			</result>
+		</action>
+		<action name="deleteStuInfoById" class="stuInfoAction" method="deleteStuInfoById">
+			<result name="success" type="redirectAction">
+				queryAll
+			</result>
+		</action>
+		<action name="addSave" class="stuInfoAction" method="addSave">
+		</action>
+		<!-- 第二种使用Ajax操作数据的方法获取所有的学生的姓名 -->
+		<action name="queryStuNamesAsAjax" class="stuInfoAction"
+			method="queryStuNamesAsAjax">
+		</action>
+		<!-- Excel导入 -->
+		<action name="importAll" class="stuInfoAction" method="importAll">
+			<result name="success" type="redirectAction">
+				queryAll
+			</result>
+		</action>
+		<!-- 使用map进行操作 -->
+		<action name="insertStuInfoByMap" class="stuInfoAction" method="insertStuInfoByMap">
+			<result name="success" type="redirectAction">
+				queryAll
+			</result>
+		</action>
+		<!--批量添加 -->
+		<action name="batchAdd" class="stuInfoAction" method="batchAdd">
+			<result name="success" type="redirectAction">
+				queryAll
+			</result>
+		</action>
+	</package>
+
+
+</struts>

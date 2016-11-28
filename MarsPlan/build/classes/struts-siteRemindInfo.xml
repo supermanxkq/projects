@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 全站公告管理管理 -->
+	<package name="log-siteRemindInfo" namespace="/log" extends="globalResult">   
+	   	<!-- 公告查看 -->
+    	<action name="siteRemindInfo" class="/log/siteRemindInfo">
+			<result name="list">/WEB-INF/page/log/siteRemindInfo/siteRemindInfoList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+</struts>
