@@ -1,0 +1,25 @@
+#MyEclipse Hibernate Properties
+#Mon Jan 26 04:08:28 CST 2015
+sessionFactoryName=com.cms.ORM.HibernateSessionFactory
+genBasicCompId=false
+profile=
+daoSFId=
+version=3.2
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=sessionFactory
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=/GoodymDateSys/hibernate.reveng.xml
+configFile=/GoodymDateSys/src/applicationContext.xml
+createConfigFile=false
+addLibs2Classpath=true
+baseDaoClass=BaseHibernateDAO

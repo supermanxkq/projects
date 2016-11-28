@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 设置Action的请求后缀为.action,防止Struts2.1将无后缀请求亦当成正常的Action请求处理 -->
+	<constant name="struts.action.extension" value="action"/>
+	<!-- 设置Web应用的默认编码集为gbk -->
+	<constant name="struts.i18n.encoding" value="gbk"/>
+	<!-- 设置Web应用的默认Locale为zh_CN -->
+	<constant name="struts.locale" value="zh_CN" />
+	<!-- 设置Struts2.1应用的国际化资源文件，多个文件中间可用逗号分隔 -->
+	<constant name="struts.custom.i18n.resources" value="messageResource"/>
+	<!-- 设置Struts2.1默认的ObjectFactory为spring -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 设置Struts2.1应用是否处于开发模式，通常在开发调试阶段设为true,正式上线后可设为false -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 设置Struts2.1允许静态方法调用 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<!-- 设置Struts2.1的默认主题为simple -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 设置Struts2.1配置临时目录问题 -->
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<!-- 设置Struts2的上传文件最大容量大小 -->
+	<constant name="struts.multipart.maxSize" value="200000000" />	
+
+    <package name="eportal" extends="struts-default">
+	      
+		<!-- 定义全局result -->
+		<global-results>
+			<!-- 定义名为exception的全局result -->
+		    <result name="exception">/exception.jsp</result>
+		    <result name="tologin">/admin/tologin.htm</result>
+		    <result name="noprim">/admin/error.htm</result>	
+		</global-results>
+
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 捕捉到Exception异常(所有异常)时跳转到exception所命名的视图上 -->
+			<exception-mapping exception="java.lang.Exception" result="exception"/>
+		</global-exception-mappings>	
+    </package>
+    
+    <!-- 定义后台管理包，指定命名空间为/admin -->    
+     <package name="admin" extends="eportal" namespace="/admin">
+     		
+		<!-- 配置系统用户管理的AdminAction映射 -->
+		
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result>/admin/{1}.jsp</result>
+			<result name="input">/admin/{1}.jsp</result>			
+			<result name="index" type="redirect">/admin/index.jsp</result>
+			<result name="login">/admin/login.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 配置文章管理的ArticleAction映射 -->
+		<action name="updateArticle" class="articleAction" method="updateArticle">
+			<result name="input">/admin/editArticle.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>	
+		<action name="article_*" class="articleAction" method="{1}">
+			<result>/admin/{1}.jsp</result>
+			<result name="input">/admin/{1}.jsp</result>			
+			<result name="toBrowseArticle" type="redirectAction">
+				<param name="actionName">article_browseArticle</param>
+				<param name="namespace">/admin</param>
+				<param name="actionMsg">${actionMsg}</param>
+			</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>				
+    </package>
+   
+</struts>

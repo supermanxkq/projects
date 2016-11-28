@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="GoodymDateSys"
+  id="myeclipse.1340879671203"
+  context-root="/GoodymDateSys"
+  j2ee-spec="5.0"
+  archive="GoodymDateSys.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

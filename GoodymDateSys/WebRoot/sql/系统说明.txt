@@ -1,0 +1,13 @@
+﻿在线预览地址：http://java.goodym.cn/2015.html
+
+本系统使用struts2+spring+hibernate整合
+
+数据库采用msyql
+
+更多项目源码 欢迎访问我的小站 http://java.goodym.cn/
+
+加入QQ群交流：433090554
+
+后台登陆地址：http://localhost:8080/GoodymDateSys/admin/login.jsp
+
+账号和密码都是：admin
