@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="org.gjt.mm.mysql.Driver">
+		</property>				
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>		
+	</bean> 
+	
+	
+ <!-- ibatis sqlMapClient config -->
+    <bean id="mySqlMapClient" 
+        class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation">
+            <value> 
+                /WEB-INF/classes/sqlMapConfig.xml
+            </value>
+        </property>
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>    
+    </bean>
+    <!-- Transactions -->
+   <bean id="myTransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+	
+	<!-- 事务处理的AOP配置 //-->
+	<bean id="myProxyTemplate" abstract="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref local="myTransactionManager" />
+		</property>
+		
+		<property name="target">
+			<list >
+				<ref local="userService" />
+				<ref local="infoIbatisDAO" />
+			</list>
+		</property>		
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="init*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="convert*">
+					PROPAGATION_REQUIRED,readOnly
+				</prop>
+			</props>
+		</property>
+	</bean>	
+	<!-- ****************系统实现类的配置 ******实现类* ibatis********* //-->
+	<bean id="userService" parent="myProxyTemplate">
+		<property name="target">
+			<bean class="com.spring.demo.test.service.impl.UserDAOIbatisImpl">
+				<property name="sqlMapClient">
+					<ref local="mySqlMapClient" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="infoIbatisDAO" parent="myProxyTemplate">
+		<property name="target">
+			<bean class="com.spring.demo.test.service.impl.InfoDAOIbatisImpl">
+				<property name="sqlMapClient">
+					<ref local="mySqlMapClient" />
+				</property>
+			</bean>
+		</property>
+	</bean>	
+</beans>

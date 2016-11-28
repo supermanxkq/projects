@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<!-- ================= -->
+	<!-- config properties -->
+	<!-- ================= -->
+
+	<substitutionProperty name="log.dir" value="D:/frankTestWorkspace/logger" />
+	<substitutionProperty name="log.bak.dir" value="${log.dir}/archives" />
+	<substitutionProperty name="fileAppenderClass" value="ch.qos.logback.core.rolling.RollingFileAppender" />
+	<substitutionProperty name="bufferedIO" value="false" />
+	<substitutionProperty name="immediateFlush" value="true" />
+	<substitutionProperty name="encoding" value="UTF-8" />
+	<substitutionProperty name="append" value="true" />
+	<substitutionProperty name="defaultPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n" />
+	<substitutionProperty name="csvPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS},%msg%n" />	
+
+	<!-- ============================== -->
+	<!-- Append messages to the console -->
+	<!-- ============================== -->
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${defaultPattern}</Pattern>
+		</layout>
+	</appender>
+
+	<!-- =============== -->
+	<!-- Appender config -->
+	<!-- =============== -->
+
+	<!--  General File Log -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Append>${append}</Append>
+		<Encoding>${encoding}</Encoding>
+		<BufferedIO>${bufferedIO}</BufferedIO>
+		<ImmediateFlush>${immediateFlush}</ImmediateFlush>
+		<File>${log.dir}/web_test.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.bak.dir}/web_test.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${defaultPattern}</Pattern>
+		</layout>
+	</appender>
+
+	<!--  Exception Error Log -->
+	<appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<Append>${append}</Append>
+		<Encoding>${encoding}</Encoding>
+		<BufferedIO>${bufferedIO}</BufferedIO>
+		<ImmediateFlush>${immediateFlush}</ImmediateFlush>
+		<File>${log.dir}/error_web_test.log</File>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.bak.dir}/error_web_test.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${defaultPattern}</Pattern>
+		</layout>
+	</appender>
+
+	<!--  Schedule task status log -->
+	<appender name="TASK" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Append>${append}</Append>
+		<Encoding>${encoding}</Encoding>
+		<BufferedIO>${bufferedIO}</BufferedIO>
+		<ImmediateFlush>${immediateFlush}</ImmediateFlush>
+		<File>${log.dir}/test_task.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.bak.dir}/test_task.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${defaultPattern}</Pattern>
+		</layout>
+	</appender>	
+
+	<!-- Logger for data dump -->
+	<appender name="DATA_DUMP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Append>${append}</Append>
+		<Encoding>${encoding}</Encoding>
+		<BufferedIO>${bufferedIO}</BufferedIO>
+		<ImmediateFlush>${immediateFlush}</ImmediateFlush>
+		<File>${log.dir}/test_data.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.bak.dir}/test_data.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${defaultPattern}</Pattern>
+		</layout>
+	</appender>
+
+	<!--  Performance Logging -->
+	<appender name="PERFORMANCE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Append>${append}</Append>
+		<Encoding>${encoding}</Encoding>
+		<BufferedIO>${bufferedIO}</BufferedIO>
+		<ImmediateFlush>${immediateFlush}</ImmediateFlush>
+		<File>${log.dir}/test_performance.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.bak.dir}/test_performance.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${defaultPattern}</Pattern>
+		</layout>
+	</appender>
+	
+	<!-- ============= -->
+	<!-- Logger config -->
+	<!-- ============= -->
+
+	<logger name="org.hibernate">
+		<level value="INFO" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ERROR_LOG" />		
+	</logger>
+
+	<logger name="org.apache">
+		<level value="WARN" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ERROR_LOG" />		
+	</logger>
+
+	<logger name="com.travelzen">
+		<level value="DEBUG" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ERROR_LOG" />
+	</logger>
+
+	<logger name="com.youyou">
+		<level value="DEBUG" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ERROR_LOG" />
+	</logger>
+
+	<logger name="TASK">
+		<level value="INFO" />
+		<appender-ref ref="TASK" />
+		<appender-ref ref="FAILURE_LOG" />
+	</logger>
+	
+	<logger name="DATA">
+		<level value="DEBUG" />
+		<appender-ref ref="DATA_DUMP" />
+	</logger>
+	
+	<logger name="PERFORMANCE">
+		<level value="DEBUG" />
+		<appender-ref ref="PERFORMANCE" />
+	</logger>
+	
+	<!-- ===================== -->
+	<!-- Setup the Root logger -->
+	<!-- ===================== -->
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>
+

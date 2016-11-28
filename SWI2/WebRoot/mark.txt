@@ -1,0 +1,38 @@
+
+
+webwork+Spring+ibatis+freemarkr+log....
+
+
+打开mark.sql，创建数据库及表
+
+
+处理中文问题，目前我只能这样处理，因为没有找到更好的办法。。
+数据库及页面等编码统一为“UTF-8”
+在Tomcat/conf/server.xml文件中找到该片段   
+  <Connector   port="8080"   
+                                maxThreads="150"   minSpareThreads="25"   maxSpareThreads="75"   
+                                enableLookups="false"   redirectPort="8443"   acceptCount="100"   
+                                debug="0"   connectionTimeout="20000"     
+                                disableUploadTimeout="true"   />   
+  修改为：   
+  <Connector   port="8080"   
+                                maxThreads="150"   minSpareThreads="25"   maxSpareThreads="75"   
+                                enableLookups="false"   redirectPort="8443"   acceptCount="100"   
+                                debug="0"   connectionTimeout="20000"     
+                                disableUploadTimeout="true"     URIEncoding="UTF-8"/>   
+
+*-----------URIEncoding="UTF-8"  根据自己的配置改成相应的配置。。
+
+
+配置好后，启动项目。。。
+加载：
+
+http://localhost:8080/webworkSpringIbatiasDemo/login.jsp
+
+先注册，然后。。就可以作关的操作了。。
+            
+                
+                
+                
+                
+                

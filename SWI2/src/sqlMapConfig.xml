@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig   
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"     
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+    
+<!-- 
+
+ <settings cacheModelsEnabled="true"
+
+//设定系统是否使用延迟加载机制：设定是否用字节码强化机制true;
+enhancementEnabled="true"
+lazyLoadingEnabled="true"
+
+errorTracingEnabled="true"
+maxRequests="32"
+maxSessions="10"
+maxTransactions="5"
+useStatementNamespaces="false" />
+    //ibatis本身带的数据库连接（也可以用数据连接池）
+    //type=JDBC代表采用的事务管理
+    
+    
+  
+    <settings cacheModelsEnabled="true"
+     enhancementEnabled="true" lazyLoadingEnabled="true" errorTracingEnabled="true" 
+     maxRequests="32" maxSessions="10" maxTransactions="5" 
+     useStatementNamespaces="false" />  
+    <transactionManager type="JDBC">
+    	<dataSource type="simple">
+    		<property name=""        value=""/>
+    	</dataSource>
+    </transactionManager>
+ -->
+   
+<sqlMapConfig>
+     <!-- List the SQL Map XML files. They can be loaded from the 
+       classpath, as they are here (com.domain.data...) -->
+       
+ 	 <sqlMap resource="com/spring/demo/test/object/TUser.xml"/>
+     <sqlMap resource="com/spring/demo/test/object/TInfo.xml"/>
+    
+    
+</sqlMapConfig>

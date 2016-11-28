@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="default">
+
+  <!-- Use type aliases to avoid typing the full classname every time. -->
+  <typeAlias alias="TInfo" type="com.spring.demo.test.object.TInfo"/>
+
+  <!-- Result maps describe the mapping between the columns returned
+       from a query, and the class properties.  A result map isn't
+       necessary if the columns (or aliases) match to the properties 
+       exactly. -->  
+   <resultMap id="TInfoResult" class="TInfo">
+    <result property="id" column="id"/>
+    <result property="fid" column="fid"/>
+    <result property="ages" column="ages"/>
+    <result property="mobile" column="mobile"/>   
+     <result property="addr" column="addr"/>   
+    <result property="email" column="email"/>   
+  </resultMap>
+
+  <!-- Select with no parameters using the result map for Account class. -->
+  <select id="selectAllTInfo" resultMap="TInfoResult">
+    select * from t_info
+  </select>
+  <!-- A simpler select example without the result map.  Note the 
+       aliases to match the properties of the target result class. -->
+  <select id="selectTInfoById" parameterClass="int" resultClass="TInfo">
+    select * from t_info where id = #id#
+  </select>
+    <select id="selectTInfoByArr" parameterClass="String" resultClass="TInfo">
+    select * from t_info  where fid = #fid#
+  </select>
+   
+  <!-- Insert example, using the TInfo parameter class -->
+  <insert id="insertTInfo" parameterClass="TInfo">
+    insert into t_info (
+      fid,
+      ages,
+      mobile,addr,
+      email)
+    values (
+      #fid#, #ages#, #mobile#,#addr#,#email#
+    )
+  </insert>
+
+  <!-- Update example, using the TInfo parameter class -->
+  <update id="updateTInfo" parameterClass="TInfo">
+    update t_info set
+      ages = #ages#,
+      fid = #fid#,
+       addr = #addr#,
+      mobile = #mobile#,
+      email = #email#
+    where
+      id = #id#
+  </update>
+
+  <!-- Delete example, using an integer as the parameter class -->
+  <delete id="deleteTInfoById" parameterClass="int">delete from t_info where id =#id#</delete>
+</sqlMap>

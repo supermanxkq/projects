@@ -1,0 +1,45 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+
+<xwork>
+	<include file="webwork-default.xml" />
+	<include file="config-browser.xml" />
+	<!--  externalReferenceResolver="com.atlassian.xwork.ext.SpringServletContextReferenceResolver" -->
+	<package name="default" extends="webwork-default"   >
+		<result-types>
+			<!-- page 模板..下面正好要用。 -->
+			<result-type name="velocity"
+				class="com.opensymphony.webwork.dispatcher.VelocityResult">
+			</result-type>
+			<result-type name="freemarker"
+				class="com.opensymphony.webwork.views.freemarker.FreemarkerResult">
+			</result-type>
+			<!-- jasper reports 报表 -->
+			<result-type name="jasper"
+				class="com.opensymphony.webwork.views.jasperreports.JasperReportsResult">
+			</result-type>
+		</result-types>
+
+		<interceptors>			
+			 <interceptor name="autowire" class="com.opensymphony.xwork.spring.interceptor.ActionAutowiringInterceptor"> 
+    			 <param name="autowireStrategy">1</param> 
+   			 </interceptor> 
+		    <interceptor-stack name="autowireDefault"> 		
+		      <interceptor-ref name="autowire"/> 		
+		      <interceptor-ref name="defaultStack"/> 		
+		    </interceptor-stack> 			
+		</interceptors>
+
+		<default-interceptor-ref name="myDefaultWebStack" />
+
+
+
+		<!-- type="redirect" 此为配置的action，method为对应类中的子方法，访问方式：login!aa.action -->
+		
+		
+		<action name="login" class="com.spring.demo.test.action.LoginAction" method="login">
+			<result name="success" type="freemarker">ok.shtml</result>			
+			<result name="input"  type="dispatcher">login.jsp</result>			
+			<interceptor-ref name="autowireDefault"/>
+		</action>		
+	</package>
+</xwork>

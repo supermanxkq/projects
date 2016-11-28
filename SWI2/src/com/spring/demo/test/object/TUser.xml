@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="default">
+
+  <!-- Use type aliases to avoid typing the full classname every time. -->
+  <typeAlias alias="TUser" type="com.spring.demo.test.object.TUser"/>
+
+  <!-- Result maps describe the mapping between the columns returned
+       from a query, and the class properties.  A result map isn't
+       necessary if the columns (or aliases) match to the properties 
+       exactly. -->  
+   <resultMap id="TUserResult" class="TUser">
+    <result property="id" column="id"/>
+    <result property="uname" column="uname"/>
+    <result property="pwd" column="pwd"/>
+    <result property="cnname" column="cnname"/>   
+     <result property="createdate" column="createdate"/>   
+    <result property="sex" column="sex"/>  	 
+  </resultMap>
+
+  <!-- Select with no parameters using the result map for Account class. -->
+  <select id="selectAllTUser" resultMap="TUserResult">
+    select * from t_user
+  </select>
+  
+  <select id="selectAllTUserByName" parameterClass="String"  resultMap="TUserResult">
+    select * from t_user where uname=#uname# 
+  </select>
+
+  <!-- A simpler select example without the result map.  Note the 
+       aliases to match the properties of the target result class. -->
+  <select id="selectTUserById" parameterClass="int" resultClass="TUser">
+    select * from t_user where id = #id#
+  </select>
+   
+  <select id="selectTUserByUname" parameterClass="String" resultClass="TUser">
+    select * from t_user where uname = #uname#
+  </select>
+  
+  <!-- Insert example, using the TUser parameter class -->
+  <insert id="insertTUser" parameterClass="TUser">
+    insert into t_user (
+      uname,
+      pwd,
+      createdate,cnname,
+      sex)
+    values (
+      #uname#, #pwd#, #createdate:TIMESTAMP#,#cnname#,#sex#
+    )
+  </insert>
+
+  <!-- Update example, using the TUser parameter class -->
+  <update id="updateTUser" parameterClass="TUser">
+    update t_user set
+      uname = #uname#,
+      pwd = #pwd#,
+       cnname = #cnname#,
+      sex = #sex#,
+      createdate = #createdate#
+    where
+      id = #id#
+  </update>
+
+  <!-- Delete example, using an integer as the parameter class -->
+  <delete id="deleteTUserById" parameterClass="int">delete from t_user where id =#id#</delete>
+</sqlMap>
