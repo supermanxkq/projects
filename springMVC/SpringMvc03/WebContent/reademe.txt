@@ -1,0 +1,21 @@
+restful风格的url
+例如：
+http://blog.csdn.net/shuangrenyu1234/article/details/50550784
+
+①web.xml
+/*去掉*
+②设置请求
+<a href="${pageContext.request.contextPath}/article/details/1" target="_blank">文章一</a>
+
+③请求地址
+http://localhost:8080/SpringMvc03/article/list
+
+④@PathVariable路径变量
+
+⑤需求加一个图片
+	<!-- 静态资源标签，防止将.jpg格式的 
+	{pageContext.request.contextPath}/resources/article_list.jpg请求也进行拦截请求不到图片信息-->
+	
+	<mvc:resources mapping="/resources/**" location="/images/"/>
+	
+	<mvc:resources mapping="/resources2/**" location="/css/"/>
