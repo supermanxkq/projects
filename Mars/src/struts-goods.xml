@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 指定国际化资源文件的baseName为messageResource -->
+	<constant name="struts.custom.i18n.resources" value="message_zh_CN" />
+	<!-- 设置该应用使用的解码集 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.multipart.maxSize" value="9000000" />
+	<package name="goods-xkq" namespace="/goods" extends="globalResult">
+		<action name="goods" class="/goods/goods">
+		<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件类型 -->
+<!--    			<param name="allowedTypes">image/jpeg,image/pjpeg</param>-->
+    			<!-- 配置允许上传的文件大小 -->
+    			<param name="maximumSize">1048576</param>
+    		</interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<!-- 引用自定义拦截器进行拦截，防止未登录访问 -->
+			<result name="list">/WEB-INF/pages/goods/addGoods.jsp
+			</result>
+			<result name="savesuccess" >/WEB-INF/pages/goods/success.jsp
+			</result>
+			<result name="input">/WEB-INF/pages/goods/success.jsp
+			</result>
+		</action>
+	</package>
+</struts>
