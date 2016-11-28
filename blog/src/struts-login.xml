@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 指定国际化资源文件的baseName为messageResource -->
+	<constant name="struts.custom.i18n.resources" value="message_zh_CN" />
+	<!-- 设置该应用使用的解码集 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.multipart.maxSize" value="9000000" />
+	<!-- 跳转到登录页面 -->
+	<package name="index-xkq" namespace="/system" extends="globalResult">
+		<action name="login" class="/system/login">
+			<result name="success" >/WEB-INF/pages/login/login2.jsp</result>
+		</action>
+	</package>
+</struts>
