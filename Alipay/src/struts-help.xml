@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 指定国际化资源文件的baseName为messageResource -->
+	<constant name="struts.custom.i18n.resources" value="message_zh_CN" />
+	<!-- 设置该应用使用的解码集 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.multipart.maxSize" value="9000000" />
+	<package name="help-xkq" namespace="/help" extends="globalResult">
+		<action name="help" class="/help/help">
+			<result name="list">/WEB-INF/pages/index.jsp
+			</result>
+			<result name="input">/WEB-INF/pages/help/blogSet.jsp
+			</result>
+			<result name="helpUI">/WEB-INF/pages/help/index.jsp
+			</result>
+			<result name="sendsuccess">/WEB-INF/pages/success.jsp
+			</result>
+		</action>
+	</package>
+</struts>
