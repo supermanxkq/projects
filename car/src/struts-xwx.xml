@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 订单管理 -->
+	<package name="order-xwx" namespace="/order" extends="globalResult">   
+	   	<!-- 订单卡片激活-->
+    	<action name="cardEnabled" class="/order/cardEnabled">
+			<result name="list">/WEB-INF/page/order/cardenabled/cardEnabledList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+    <!-- 会员信息管理 -->
+	<package name="member-xwx" namespace="/member" extends="globalResult">   
+	   	<!-- 会员群组管理-->
+    	<action name="memGroups" class="/member/memGroups">
+			<result name="list">/WEB-INF/page/member/memGroups/memGroupsList.jsp</result>
+			<result name="input">/WEB-INF/page/member/memGroups/memGroupsSet.jsp</result>
+			<result name="look">/WEB-INF/page/member/memGroups/memGroupsLook.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+     <!-- 商户消费分析报表-->
+	<package name="report-xwx" namespace="/report" extends="globalResult">   
+	   	<!-- 商户消费分析报表查看-->
+    	<action name="merconsumeanalyze" class="/report/merconsumeanalyze">
+			<result name="list">/WEB-INF/page/report/merConsumeAnalyzeList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+</struts>

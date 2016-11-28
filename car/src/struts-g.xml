@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 账户管理 -->
+	<package name="account-g" namespace="/account" extends="globalResult">   
+	   	<!-- 账户查看 -->
+    	<action name="accounts" class="/account/accounts">
+			<result name="list">/WEB-INF/page/account/accounts/accountsList.jsp</result>
+			<result name="longShort">/WEB-INF/page/account/longShortFund/longShortFund.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+	   
+	   
+	    <!-- 账户类型 -->
+    	<action name="acckinds" class="/account/acckinds">
+			<result name="list">/WEB-INF/page/account/AccKinds/accKindsList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    	<!-- 账户冻结 -->
+    	<action name="accFreeze" class="/account/accFreeze">
+			<result name="list">/WEB-INF/page/account/accFreeze/accFreezeList.jsp</result>
+			<result name="input">/WEB-INF/page/account/accFreeze/accFreezeSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    	
+    	<!-- 账户解冻-->
+    	<action name="accThaw" class="/account/accThaw">
+			<result name="list">/WEB-INF/page/account/accThaw/accThawList.jsp</result>
+			<result name="input">/WEB-INF/page/account/accThaw/accThawSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	<!-- 帐户操作记录 -->
+    	<action name="accRecord" class="/account/accRecord">
+    		<result name="list">/WEB-INF/page/account/accRecord/accRecord.jsp</result>
+    	</action>
+    </package>
+</struts>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="base-z" namespace="/card" extends="globalResult">   
+	<!-- 卡BIN管理 -->
+    	<action name="cardBIN" class="/card/cardBIN">
+			<result name="list">/WEB-INF/page/card/cardBin/cardBINList.jsp</result>
+			<result name="input">/WEB-INF/page/card/cardBin/cardBINSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	<action name="cardNo" class="/card/cardNo">
+    	    <result name="list">/WEB-INF/page/card/cardNo/cardNoList.jsp</result>
+    	    <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  	
+    	
+    	<action name="cardlock" class="/card/cardlock">
+    	    <result name="list">/WEB-INF/page/card/lock/LockList.jsp</result>
+    	    <result name="input">/WEB-INF/page/card/lock/lockSet.jsp</result>
+    	    <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	<action name="cardunlock" class="/card/cardunlock">
+    	    <result name="list">/WEB-INF/page/card/unlock/unlockList.jsp</result>
+    	    <result name="input">/WEB-INF/page/card/unlock/unlockSet.jsp</result>
+    	    <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	<action name="cards" class="/card/cards">
+    	    <result name="list">/WEB-INF/page/card/cards/cardsList.jsp</result>
+    	    <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  	
+   	   <action name="change" class="/card/change">
+    	    <result name="list">/WEB-INF/page/card/cardChange/cardChangeList.jsp</result>
+    	    <result name="input">/WEB-INF/page/card/cardChange/cardChangeSet.jsp</result>
+    	    <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+      </action> 
+    </package>
+    
+    <package name="report-h" namespace="/report" extends="globalResult">   
+	<!-- 会员交易风控预警报表报表 -->
+    	<action name="singleEveryTradesWorn" class="/report/singleEveryTradesWorn">
+			<result name="list">/WEB-INF/page/report/singleEveryTradesWornList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    <!-- 司机刷卡记录 -->
+    	<action name="driverCardRecord" class="/report/driverCardRecord">
+			<result name="list">/WEB-INF/page/report/drivrCardRecordList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	<action name="visitorSlowRecord" class="/report/visitorSlowRecord">
+			<result name="list">/WEB-INF/page/report/visitorSlowRecordList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	<action name="merSaleSum" class="/report/merSaleSum">
+			<result name="list">/WEB-INF/page/report/merSaleSumList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	</package>
+</struts>

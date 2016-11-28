@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="managers-xkq" namespace="/managers" extends="globalResult">
+		<action name="goods" class="/managers/goods">
+			<result name="list">/WEB-INF/page/report/finishedList.jsp</result>
+			<result name="input">/WEB-INF/page/report/CollectionSet.jsp</result>
+			<result name="checkUI">/WEB-INF/page/goods/goodsDetails.jsp</result>
+		</action>   
+    </package>
+</struts>

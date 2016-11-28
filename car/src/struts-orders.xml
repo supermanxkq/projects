@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="order-xkq" namespace="/order" extends="globalResult">
+		<action name="order" class="/order/order">
+			<result name="list">/WEB-INF/page/order/orderList.jsp</result>
+			<result name="input">/WEB-INF/page/order/orderSet.jsp</result>
+			<result name="checkUI">/WEB-INF/page/order/print.jsp</result>
+			<result name="confirmOrder">/WEB-INF/page/order/orderConfirm.jsp</result>
+		</action>   
+    </package>
+</struts>

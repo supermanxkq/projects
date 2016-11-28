@@ -1,0 +1,131 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context 
+  	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop 
+  	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+  	http://www.springframework.org/schema/tx 
+  	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!--
+		附:cronExpression表达式解释: 0 0 12 * * ? 在每天中午12：00触发 0 15 10 ? * *
+		每天上午10:15 触发 0 15 10 * * ? 每天上午10:15 触发 0 15 10 * * ? * 每天上午10:15 触发 0
+		15 10 * * ? 2005 在2005年中的每天上午10:15 触发 0 * 14 * * ?
+		每天在下午2：00至2：59之间每分钟触发一次 0 0/5 14 * * ? 每天在下午2：00至2：59之间每5分钟触发一次 0 0/5
+		14,18 * * ? 每天在下午2：00至2：59和6：00至6：59之间的每5分钟触发一次 0 0-5 14 * * ?
+		每天在下午2：00至2：05之间每分钟触发一次 0 10,44 14 ? 3 WED 每三月份的星期三在下午2：00和2：44时触发 0
+		15 10 ? * MON-FRI 从星期一至星期五的每天上午10：15触发 0 15 10 15 * ?
+		在每个月的每15天的上午10：15触发 0 15 10 L * ? 在每个月的最后一天的上午10：15触发 0 15 10 ? * 6L
+		在每个月的最后一个星期五的上午10：15触发 0 15 10 ? * 6L 2002-2005 在2002, 2003, 2004 and
+		2005年的每个月的最后一个星期五的上午10：15触发 0 15 10 ? * 6#3 在每个月的第三个星期五的上午10：15触发 0 0
+		12 1/5 * ? 从每月的第一天起每过5天的中午12：00时触发 0 11 11 11 11 ?
+		在每个11月11日的上午11：11时触发. 0 * * * * ? 每分钟执行一次触发 0 */2 * * * 每两个小时
+	-->
+	<bean id="holidayMail" class="com.paySystem.ic.web.action.mail.MailHolidayAction"></bean>
+	<bean id="birthdayMail" class="com.paySystem.ic.web.action.mail.BirthdayAction"></bean>
+	<bean id="taskMail" class="com.paySystem.ic.web.action.collection.CollectionAction"></bean>
+	<!--	任务邮件-->
+	<bean id="jobDetail_taskMail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="taskMail" />
+		</property>
+		<property name="targetMethod">
+			<value>sendMail</value>
+		</property>
+	</bean>
+	<!-- 更新任务状态 -->
+	<bean id="jobDetail_taskStatus"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="taskMail" />
+		</property>
+		<property name="targetMethod">
+			<value>updateTaskStatus</value>
+		</property>
+	</bean>
+	<!-- 节日邮件 -->
+	<!--	<bean id="jobDetail_holidayMail"-->
+	<!--
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	-->
+	<!--		<property name="targetObject">-->
+	<!--			<ref bean="holidayMail" />-->
+	<!--		</property>-->
+	<!--		<property name="targetMethod">-->
+	<!--			<value>sendMail</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<!-- 生日邮件 -->
+	<!--	<bean id="jobDetail_birthdayMail"-->
+	<!--
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	-->
+	<!--		<property name="targetObject">-->
+	<!--			<ref bean="birthdayMail" />-->
+	<!--		</property>-->
+	<!--		<property name="targetMethod">-->
+	<!--			<value>sendMail</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<!-- 节日定时 -->
+	<!--
+		<bean id="holidayMailTimer"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+	-->
+	<!--		<property name="jobDetail">-->
+	<!--			<ref bean="jobDetail_holidayMail" />-->
+	<!--		</property>-->
+	<!--		<property name="cronExpression">-->
+	<!--			 0 15 10 ? * 6L 2020-2030 -->
+	<!--			<value>0 15 10 ? * 6L 2020-2030</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<!-- 任务定时 -->
+	<bean id="taskMailTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="jobDetail_taskMail" />
+		</property>
+		<property name="cronExpression">
+			<!-- 0 15 10 ? * 6L 2020-2030 -->
+			<value>* * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 每分钟执行一次 -->
+	<bean id="taskStatusTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="jobDetail_taskStatus" />
+		</property>
+		<property name="cronExpression">
+			<!-- 0 15 10 ? * 6L 2020-2030 -->
+			<value>* * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 生日定时 -->
+	<!--
+		<bean id="birthdayMailTimer"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+	-->
+	<!--		<property name="jobDetail">-->
+	<!--			<ref bean="jobDetail_birthdayMail" />-->
+	<!--		</property>-->
+	<!--		<property name="cronExpression">-->
+	<!--			 0 */3 * * * ? -->
+	<!--			<value>0 15 10 ? * 6L 2020-2030</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<bean autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!--				<ref local="holidayMailTimer" /> 节日邮件 -->
+				<!--				<ref local="birthdayMailTimer" /> 生日邮件 -->
+				<ref local="taskMailTimer" />
+				<ref local="taskStatusTimer" />
+			</list>
+		</property>
+	</bean>
+</beans>

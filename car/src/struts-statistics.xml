@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--任务完成统计 -->
+	<package name="statistics-supermanxkq" namespace="/statistics"
+		extends="globalResult">
+		<default-action-ref name="statistics" />
+		<action name="statistics" class="/statistics/statistics">
+			<result name="success">/WEB-INF/page/report/statisticsList.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>
