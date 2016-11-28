@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>远程js调用本地函数测试</title>
+<!-- 
+	远程js文件内容
+	localHandler({"result":"I'm remote data!"});
+	引入远程的JS文件，会自动调用localHandler方法
+ -->
+<script type="text/javascript">
+	var localHandler = function(data) {
+		alert('Im local js method,called by remote js ,return data is":"' + data.result);
+	};
+</script>
+<script type="text/javascript" src="http://www.xukaiqiang.com/remote.js"></script>
+</head>
+<body>
+
+</body>
+</html>
