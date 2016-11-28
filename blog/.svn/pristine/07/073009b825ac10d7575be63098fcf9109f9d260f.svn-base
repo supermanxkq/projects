@@ -1,8 +1,0 @@
-#是否正式环境
-IS_FORMAL=false
-#是否验证UKEY
-IS_VERIFY_UKEY=false
-#是否允许初始化
-IS_INIT=true
-#是否开启发送短信
-IS_SEND_MSG=true
