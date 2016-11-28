@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<init-config>
+	<main-module id="sy-1000" name="基本信息" sortorder="1000">
+		<mid-module id="sy-1100" name="平台信息管理" sortorder="1100"
+			isOften="1">
+			<module id="sy-1101" name="平台信息管理" linkaddr="base/organs"
+				sortorder="1101">
+				<privilege id="sy-1101-01" name="平台信息查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-1101-02" name="平台信息添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1101-03" name="平台信息修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1101-04" name="平台信息删除" privilegeLevel="0"></privilege>
+			</module>
+			<!--
+				<module id="sy-1210" name="保证金管理" linkaddr="base/bail"
+				sortorder="1210"> <privilege id="sy-1210-01" name="保证金查看"
+				privilegeLevel="0"></privilege> <privilege id="sy-1210-02"
+				name="保证金添加" privilegeLevel="0"></privilege> <privilege
+				id="sy-1210-03" name="保证金修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1210-04" name="保证金删除"
+				privilegeLevel="0"></privilege> </module>
+			-->
+		</mid-module>
+<!-- 
+		<mid-module id="sy-1400" name="机构商户功能设置" sortorder="1400"
+			isOften="0">
+			<module id="sy-1401" name="机构商户功能设置" linkaddr="base/mofswitch"
+				sortorder="1401">
+				<privilege id="sy-1401-01" name="机构商户功能设置查看"></privilege>
+				<privilege id="sy-1401-02" name="机构商户功能设置添加"
+					privilegeLevel="0"></privilege>
+				<privilege id="sy-1401-03" name="机构商户功能设置修改"></privilege>
+				<privilege id="sy-1401-04" name="机构商户功能设置删除"
+					privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+ -->
+		<mid-module id="sy-1900" name="物流管理" sortorder="1900">
+			<module id="sy-1901" name="物流公司管理" linkaddr="base/logistics"
+				sortorder="1901">
+				<privilege id="sy-1901-01" name="物流公司信息查看"></privilege>
+				<privilege id="sy-1901-02" name="物流公司信息添加"></privilege>
+				<privilege id="sy-1901-03" name="物流公司信息修改"></privilege>
+				<privilege id="sy-1901-04" name="物流公司信息删除"></privilege>
+			</module>
+			<module id="sy-1902" name="运费设置" linkaddr="base/freightset"
+				sortorder="1902">
+				<privilege id="sy-1902-01" name="运费设置查看"></privilege>
+				<privilege id="sy-1902-02" name="运费设置添加"></privilege>
+				<privilege id="sy-1902-03" name="运费设置修改"></privilege>
+			</module>
+		</mid-module>
+
+
+
+		<mid-module id="sy-1200" name="商铺管理" sortorder="1200"
+			isOften="1">
+			<module id="sy-1201" name="商户管理" linkaddr="base/merchants"
+				sortorder="1201">
+				<privilege id="sy-1201-01" name="商户查看"></privilege>
+				<privilege id="sy-1201-02" name="商户添加"></privilege>
+				<privilege id="sy-1201-03" name="商户修改"></privilege>
+				<privilege id="sy-1201-04" name="商户删除"></privilege>
+			</module>
+			<!--
+				<mid-module id="sy-1202" name="店铺管理" sortorder="1220" isOften="1">
+			-->
+			<module id="sy-1221" name="店铺管理" linkaddr="base/storeInfo"
+				sortorder="1221">
+				<privilege id="sy-1221-02" name="店铺基本设置添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1221-03" name="店铺基本设置修改" privilegeLevel="0"></privilege>
+			</module><!--
+		</mid-module>
+			-->
+			<module id="sy-1202" name="商户评分模型" linkaddr="base/merscomo"
+				sortorder="1203">
+				<privilege id="sy-1202-01" name="商户评分模型查看"></privilege>
+				<privilege id="sy-1202-02" name="商户评分模型添加"></privilege>
+				<privilege id="sy-1202-03" name="商户评分模型修改"></privilege>
+				<privilege id="sy-1202-04" name="商户评分模型删除"></privilege>
+			</module>
+			<module id="sy-1204" name="商铺入驻审核" linkaddr="base/auditMerchants"
+				sortorder="1204">
+					<privilege id="sy-1204-01" name="商铺入驻审核查看"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-1300" name="会员管理" sortorder="1300"
+			isOften="1">
+			<module id="sy-1301" name="会员信息管理" linkaddr="member/member"
+				sortorder="1301">
+			    <privilege id="sy-1301-02" name="会员禁用">
+                </privilege>
+				<privilege id="sy-1301-03" name="取消会员禁用">
+                </privilege>
+				<privilege id="sy-1301-04" name="会员发送站内信">
+                </privilege>
+			</module>
+			<!--
+				<module id="sy-1302" name="卡等级管理" linkaddr="cardLevel/cardLevel"
+				sortorder="1302"> <privilege id="sy-1302-01"
+				name="卡等级查看"></privilege> <privilege id="sy-1302-02" name="卡等级添加"
+				privilegeLevel="0"></privilege> <privilege id="sy-1302-03"
+				name="卡等级修改" privilegeLevel="0"></privilege> <privilege
+				id="sy-1302-04" name="卡等级删除" privilegeLevel="0"></privilege>
+				</module>
+			-->
+			<module id="sy-1303" name="会员等级管理" linkaddr="memGrade/memGrade"
+				sortorder="1303">
+				<privilege id="sy-1303-01" name="会员等级查看"></privilege>
+				<privilege id="sy-1303-02" name="会员等级添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1303-03" name="会员等级修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1303-04" name="会员等级删除" privilegeLevel="0"></privilege>
+			</module>
+			<!--
+				<module id="sy-1304" name="会员卡信息管理" linkaddr="memCard/memCard"
+				sortorder="1304"> <privilege id="sy-1304-01"
+				name="会员卡信息查看"></privilege> <privilege id="sy-1304-02"
+				name="会员卡信息添加"></privilege> <privilege id="sy-1304-03"
+				name="会员卡信息修改"></privilege> <privilege id="sy-1304-04"
+				name="会员卡信息删除"></privilege> </module>
+			-->
+			<module id="sy-1305" name="会员群组管理" linkaddr="member/memGroups"
+				sortorder="1305">
+				<privilege id="sy-1305-01" name="会员群组查看"></privilege>
+				<privilege id="sy-1305-02" name="会员群组添加"></privilege>
+				<privilege id="sy-1305-03" name="会员群组修改"></privilege>
+				<privilege id="sy-1305-04" name="会员群组删除"></privilege>
+			</module>
+			<module id="sy-1306" name="会员等级积分规则" linkaddr="member/memCreditRule"
+				sortorder="1306">
+				<privilege id="sy-1306-01" name="会员积分规则查看"></privilege>
+				<privilege id="sy-1306-02" name="会员积分规则添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1306-03" name="会员积分规则修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1306-04" name="会员积分规则删除" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-1307" name="会员消费积分规则" linkaddr="member/memConsPntsRule"
+				sortorder="1307">
+				<privilege id="sy-1307-01" name="会员消费积分规则添加"
+					privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-1500" name="账户管理" sortorder="1500"
+			isOften="1">
+			<module id="sy-1501" name="会员积分账户信息" linkaddr="account/accounts" 
+			       sortorder="1501">
+				<privilege id="sy-1501-01" name="会员账户查看"></privilege>
+			</module>
+			<module id="sy-1503" name="支付账户信息" linkaddr="account/ogaccounts" 
+			       sortorder="1503">
+				<privilege id="sy-1503-01" name="机构账户查看"></privilege>
+				<privilege id="sy-1503-02" name="商户账户查看"></privilege>
+				<privilege id="sy-1503-03" name="机构账户修改支付密码"></privilege>
+				<privilege id="sy-1503-04" name="商户账户修改支付密码"></privilege>
+			</module>
+		 <!-- 
+			<module id="sy-1502" name="账户类型管理" linkaddr="account/acckinds"
+				sortorder="1502">
+				<privilege id="sy-1502-01" name="账户类型查看"></privilege>
+				
+					<privilege id="sy-1502-02" name="账户类型添加"
+					privilegeLevel="0"></privilege>
+				
+				
+				<privilege id="sy-1502-03" name="账户类型修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1502-04" name="账户类型删除" privilegeLevel="0"></privilege>
+			</module>
+		 
+			
+				<module id="sy-1503" name="长短款处理"
+				linkaddr="account/accounts?type=longShort" sortorder="1503">
+				<privilege id="sy-1503-01" name="长短款处理"></privilege> </module>
+			-->
+		</mid-module>
+		<mid-module id="sy-1600" name="短信管理" sortorder="1600"
+			isOften="1">
+			<module id="sy-1601" name="短信参数管理" linkaddr="message/messageparam"
+				sortorder="1601">
+				<privilege id="sy-1601-01" name="短信参数查看"></privilege>
+				<privilege id="sy-1601-02" name="短信参数添加"></privilege>
+				<privilege id="sy-1601-03" name="短信参数修改"></privilege>
+				<privilege id="sy-1601-04" name="短信参数删除"></privilege>
+			</module>
+			<module id="sy-1602" name="参数使用关系管理" linkaddr="message/messagerelation"
+				sortorder="1602">
+				<privilege id="sy-1602-01" name="参数使用关系查看"></privilege>
+				<privilege id="sy-1602-02" name="参数使用关系添加"></privilege>
+				<privilege id="sy-1602-03" name="参数使用关系修改"></privilege>
+				<privilege id="sy-1602-04" name="参数使用关系删除"></privilege>
+			</module>
+
+			<module id="sy-1603" name="短信群发管理" linkaddr="message/shortMesSend"
+				sortorder="1603">
+				<privilege id="sy-1603-01" name="短信群发查看"></privilege>
+				<privilege id="sy-1603-02" name="短信群发添加"></privilege>
+				<privilege id="sy-1603-03" name="短信群发修改"></privilege>
+				<privilege id="sy-1603-04" name="短信群发删除"></privilege>
+				<privilege id="sy-1603-05" name="短信群发审核" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-1700" name="商品管理" sortorder="1700"
+			isOften="1">
+			<module id="sy-1701" name="商品分类管理" linkaddr="base/goodsfamily"
+				sortorder="1701">
+				<privilege id="sy-1701-01" name="商品分类查看"></privilege>
+				<privilege id="sy-1701-02" name="商品分类添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-1701-03" name="商品分类修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-1701-04" name="商品分类删除" privilegeLevel="0"></privilege>
+			</module>
+
+
+			<module id="sy-1703" name="商品品牌管理" linkaddr="base/brand"
+				sortorder="1703">
+				<privilege id="sy-1703-01" name="商品品牌管理查看"></privilege>
+				<privilege id="sy-1703-02" name="商品品牌管理添加"></privilege>
+				<privilege id="sy-1703-03" name="商品品牌管理修改"></privilege>
+				<privilege id="sy-1703-04" name="商品品牌管理删除"></privilege>
+			</module>
+
+			<module id="sy-1704" name="商品属性规格管理" linkaddr="base/goodsattributeformat"
+				sortorder="1704">
+				<privilege id="sy-1704-01" name="商品属性规格查看"></privilege>
+				<privilege id="sy-1704-02" name="商品属性规格添加"></privilege>
+				<privilege id="sy-1704-03" name="商品属性规格修改"></privilege>
+				<privilege id="sy-1704-04" name="商品相关规格查看"></privilege>
+			</module>
+			<module id="sy-1705" name="商品信息管理" linkaddr="base/goods"
+				sortorder="1705">
+				<privilege id="sy-1705-01" name="商品信息管理查看"></privilege>
+				<privilege id="sy-1705-02" name="商品信息管理添加"></privilege>
+				<privilege id="sy-1705-03" name="商品信息管理修改"></privilege>
+				<privilege id="sy-1705-04" name="商品信息管理删除"></privilege>
+				<privilege id="sy-1705-05" name="商品信息管理批量上架"></privilege>
+				<privilege id="sy-1705-06" name="商品信息管理批量下架"></privilege>
+			</module>
+			<module id="sy-1706" name="商品属性值管理" linkaddr="base/attrEntity"
+				sortorder="1706">
+				<privilege id="sy-1706-02" name="商品属性值添加"></privilege>
+				<privilege id="sy-1706-01" name="商品属性值查看"></privilege>
+				<privilege id="sy-1706-03" name="商品属性值停用"></privilege>
+				
+				<privilege id="sy-1706-04" name="商品属性添加"></privilege>
+				<privilege id="sy-1706-05" name="商品属性停用"></privilege>
+				<privilege id="sy-1706-06" name="商品属性查看"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-1800" name="支付接口配置" sortorder="1800"
+			isOften="1">
+			<module id="sy-1801" name="支付接口配置" linkaddr="payInterface/payInterfaceConfig"
+				sortorder="1801">
+				<privilege id="sy-1801-01" name="支付接口配置查看"></privilege>
+				<privilege id="sy-1801-02" name="支付接口配置添加"></privilege>
+				<privilege id="sy-1801-03" name="支付接口配置修改"></privilege>
+				<privilege id="sy-1801-04" name="支付接口配置删除"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-1910" name="投诉管理" sortorder="1910"
+			isOften="1">
+			<module id="sy-1911" name="投诉处理" linkaddr="complaintFiled/complaintFiled"
+				sortorder="1911">
+				<privilege id="sy-1911-01" name="投诉处理"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+
+
+
+	<main-module id="sy-2000" name="业务处理" sortorder="3000">
+		<!--
+			<mid-module id="sy-2100" name="卡信息管理" sortorder="2100" isOften="1">
+			<module id="sy-2101" name="卡BIN管理" linkaddr="card/cardBIN"
+			sortorder="2101"> <privilege id="sy-2101-01"
+			name="卡BIN查看"></privilege> <privilege id="sy-2101-02" name="卡BIN添加"
+			privilegeLevel="0"></privilege> <privilege id="sy-2101-03"
+			name="卡BIN修改" privilegeLevel="0"></privilege> <privilege
+			id="sy-2101-04" name="卡BIN删除" privilegeLevel="0"></privilege>
+			<privilege id="sy-2101-05" name="卡BIN 查看"></privilege> </module>
+			<module id="sy-2102" name="卡号生成列表" linkaddr="card/cardNo"
+			sortorder="2102"> <privilege id="sy-2102-01" name="卡号生成列表查看"
+			privilegeLevel="0"></privilege> <privilege id="sy-2102-02"
+			name="卡号生成列表添加" privilegeLevel="0"></privilege> <privilege
+			id="sy-2102-03" name="卡号生成列表修改" privilegeLevel="0"></privilege>
+			<privilege id="sy-2102-04" name="卡号生成列表删除"
+			privilegeLevel="0"></privilege> </module> <module id="sy-2103"
+			name="卡信息管理" linkaddr="card/cards" sortorder="2103"> <privilege
+			id="sy-2103-01" name="卡信息管理列表查看"></privilege> <privilege
+			id="sy-2103-02" name="卡补充信息查看"></privilege> </module> <module
+			id="sy-2107" name="账户冻结" linkaddr="account/accFreeze"
+			sortorder="2107"> <privilege id="sy-2107-01"
+			name="账户冻结查看"></privilege> <privilege id="sy-2107-02"
+			name="账户冻结添加"></privilege> <privilege id="sy-2107-03"
+			name="账户冻结审核"></privilege> </module> <module id="sy-2108" name="账户解冻"
+			linkaddr="account/accThaw" sortorder="2108"> <privilege
+			id="sy-2108-01" name="账户解冻查看"></privilege> <privilege id="sy-2108-02"
+			name="账户解冻添加"></privilege> <privilege id="sy-2108-03"
+			name="账户解冻审核"></privilege> </module> </mid-module> <mid-module
+			id="sy-2200" name="库存管理" sortorder="3200" isOften="1"> <module
+			id="sy-2201" name="总部入库" linkaddr="stock/headquin" sortorder="2201">
+			<privilege id="sy-2201-01" name="总部入库查看"
+			privilegeLevel="0"></privilege> <privilege id="sy-2201-02"
+			name="总部入库添加" privilegeLevel="0"></privilege> <privilege
+			id="sy-2201-03" name="总部入库修改" privilegeLevel="0"></privilege>
+			<privilege id="sy-2201-04" name="总部入库删除"
+			privilegeLevel="0"></privilege> <privilege id="sy-2201-05"
+			name="总部入库审核" privilegeLevel="0"></privilege> </module> <module
+			id="sy-2202" name="机构领卡" linkaddr="stock/orgcard" sortorder="2202">
+			<privilege id="sy-2202-01" name="机构领卡查看"></privilege> <privilege
+			id="sy-2202-02" name="机构领卡添加" privilegeLevel="0"></privilege>
+			<privilege id="sy-2202-03" name="机构领卡修改"
+			privilegeLevel="0"></privilege> <privilege id="sy-2202-04"
+			name="机构领卡删除" privilegeLevel="0"></privilege> <privilege
+			id="sy-2202-05" name="机构领卡确认" privilegeLevel="1"></privilege>
+			</module> <module id="sy-2203" name="商户领卡" linkaddr="stock/mercard"
+			sortorder="2203"> <privilege id="sy-2203-01"
+			name="商户领卡查看"></privilege> <privilege id="sy-2203-02"
+			name="商户领卡添加"></privilege> <privilege id="sy-2203-03"
+			name="商户领卡修改"></privilege> <privilege id="sy-2203-04"
+			name="商户领卡删除"></privilege> <privilege id="sy-2203-05" name="商户领卡确认"
+			privilegeLevel="2"></privilege> </module> <module id="sy-2205"
+			name="卡库存量查看" linkaddr="stock/cardstock" sortorder="2205"> <privilege
+			id="sy-2205-01" name="卡库存查看"></privilege> <privilege id="sy-2205-02"
+			name="卡库存调整" privilegeLevel="0"></privilege> <privilege
+			id="sy-2205-03" name="卡库存详情"></privilege> </module> </mid-module>
+		-->
+		<mid-module id="sy-2300" name="商城首界面业务提醒" sortorder="3200"
+			isOften="1">
+			<module id="sy-2301" name="待处理业务查看" linkaddr="service/undealService"
+				sortorder="2301">
+				<privilege id="sy-2301-01" name="待处理业务查看"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+
+	<main-module id="sy-4000" name="订单管理" sortorder="4000">
+		<mid-module id="sy-4100" name="订单管理" sortorder="4100"
+			isOften="1">
+			<module id="sy-4101" name="订单管理" linkaddr="orders/orders"
+				sortorder="4101">
+				<privilege id="sy-4101-01" name="订单查看"></privilege>
+			</module>
+			<module id="sy-4102" name="发货管理" linkaddr="base/delivery"
+				sortorder="4102">
+				<privilege id="sy-4102-01" name="发货订单查看"></privilege>
+			</module>
+			<module id="sy-4103" name="退款管理" linkaddr="orders/remoney"
+				sortorder="4103">
+				<privilege id="sy-4103-01" name="退款管理查看"></privilege>
+				<privilege id="sy-4103-02" name="退款管理审核"></privilege>
+			</module>
+		</mid-module>
+		<!--
+			<mid-module id="sy-4200" name="充值管理" sortorder="4200" isOften="1">
+			<module id="sy-4202" name="充值订单管理" linkaddr="order/recharge"
+			sortorder="4202"> <privilege id="sy-4202-01"
+			name="充值订单查看"></privilege> <privilege id="sy-4202-02"
+			name="充值订单添加"></privilege> </module> </mid-module>
+		-->
+	</main-module>
+
+	<!--
+		<main-module id="sy-6000" name="业务参数" sortorder="5000"> </main-module>
+		<mid-module id="sy-6509" name="运营支持" sortorder="1700"> </mid-module>
+	-->
+	<main-module id="sy-5000" name="报表查询" sortorder="6000">
+
+		<mid-module id="sy-5300" name="结算报表" sortorder="5300">
+			<module id="sy-5701" name="机构结算报表" linkaddr="report/organSettTotal"
+				sortorder="5701">
+				<privilege id="sy-5701-01" name="机构结算报表"></privilege>
+			</module>
+			<module id="sy-5301" name="商户结算" linkaddr="report/mersettle"
+				sortorder="5301">
+				<privilege id="sy-5301-01" name="结算信息查看"></privilege>
+				<privilege id="sy-5301-02" name="确认结算"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-5400" name="交易报表" sortorder="5400">
+			<module id="sy-5401" name="交易报表" linkaddr="report/tradesview"
+				sortorder="5401">
+				<privilege id="sy-5401-01" name="交易报表查看"></privilege>
+			</module>
+			<module id="sy-5405" name="交易成功信息" linkaddr="report/btrades!list" sortorder="5405">
+				<privilege id="sy-5405-01" name="交易成功信息查看"></privilege>
+			</module>
+			<module id="sy-5406" name="交易异常信息" linkaddr="report/btrades!listException" sortorder="5406">
+				<privilege id="sy-5406-01" name="交易异常信息查看"></privilege>
+			</module>
+			<module id="sy-5403" name="商户消费分析报表" linkaddr="report/merconsumeanalyze"
+				sortorder="5403">
+				<privilege id="sy-5403-01" name="商户消费分析报表查看"></privilege>
+			</module>
+			<module id="sy-5501" name="商户交易汇总" linkaddr="report/merconstotal"
+				sortorder="5501">
+				<privilege id="sy-5501-01" name="商户交易汇总查看"></privilege>
+			</module>
+			<module id="sy-5901" name="会员消费分析报表" linkaddr="report/memconsanalyaction"
+				sortorder="5501">
+				<privilege id="sy-5901-01" name="会员消费分析报表查看"></privilege>
+			</module>
+			<module id="sy-5201" name="会员交易风控预警报表" linkaddr="report/singleEveryTradesWorn"
+				sortorder="5201">
+				<privilege id="sy-5201-01" name="结算信息查看"></privilege>
+			</module>
+			<module id="sy-5404" name="积分消费记录报表" linkaddr="report/itrades"
+				sortorder="5404">
+				<privilege id="sy-5404-01" name="积分消费记录报表查看"></privilege>
+			</module>
+			<module id="sy-5601" name="短信费用汇总报表" linkaddr="report/messconstotal"
+				sortorder="5601">
+				<privilege id="sy-5601-01" name="短信费用汇总查看"></privilege>
+			</module>
+			<module id="sy-5611" name="好评记录汇总报表" linkaddr="evaluation/evaluationRecord"
+				sortorder="5611">
+				<privilege id="sy-5611-01" name="好评记录汇总查看"></privilege>
+			</module>
+		</mid-module>
+
+
+
+		<mid-module id="sy-5800" name="交易汇总报表" sortorder="5800">
+			<module id="sy-5801" name="销售额汇总" linkaddr="report/salesSummary"
+				sortorder="5801">
+				<privilege id="sy-5801-01" name="销售额汇总"></privilege>
+			</module>
+
+			<module id="sy-5802" name="会员购物量排名" linkaddr="report/memShopSum"
+				sortorder="5802">
+				<privilege id="sy-5802-01" name="会员购物量排名"></privilege>
+			</module>
+
+			<module id="sy-5803" name="商品销量汇总排名" linkaddr="report/goodSaleSum"
+				sortorder="5803">
+				<privilege id="sy-5803-01" name="商品销量汇总排名"></privilege>
+			</module>
+
+			<module id="sy-5804" name="商户销量汇总排名" linkaddr="report/merSaleSum"
+				sortorder="5804">
+				<privilege id="sy-5804-01" name="商户销量汇总排名"></privilege>
+			</module>/report/regMemTotalAction
+			
+			<module id="sy-5805" name="注册会员统计报表" linkaddr="report/regMemTotalAction"
+				sortorder="5805">
+				<privilege id="sy-5805-01" name="注册会员统计报表"></privilege>
+			</module>
+
+		</mid-module>
+
+	</main-module>
+
+	<main-module id="sy-7000" name="商城前台维护" sortorder="7000">
+
+		<mid-module id="sy-6800" name="服务中心信息管理" sortorder="6800">
+			<module id="sy-6801" name="服务中心信息清单" linkaddr="stock/servicelist"
+				sortorder="6801">
+				<privilege id="sy-6801-01" name="添加服务清单" privilegeLevel="0"></privilege>
+				<privilege id="sy-6801-02" name="查看服务清单" privilegeLevel="0"></privilege>
+				<privilege id="sy-6801-03" name="修改服务清单" privilegeLevel="0"></privilege>
+				<privilege id="sy-6801-04" name="删除服务清单" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-7100" name="全站公告管理" sortorder="7100">
+			<module id="sy-7101" name="全站公告管理" linkaddr="marketing/annount"
+				sortorder="7101">
+				<privilege id="sy-7101-01" name="全站公告管理查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-7101-02" name="全站公告管理添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-7101-03" name="全站公告管理修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-7101-04" name="全站公告管理删除" privilegeLevel="0"></privilege>
+				<privilege id="sy-7101-05" name="全站公告管理发布" privilegeLevel="0"></privilege>
+				<privilege id="sy-7101-06" name="全站公告管理取消发布"
+					privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-7200" name="全站广告管理" sortorder="7200">
+			<module id="sy-7201" name="全站广告管理" linkaddr="marketing/advertma"
+				sortorder="7201">
+				<privilege id="sy-7201-01" name="全站广告管理查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-7201-02" name="全站广告管理添加" privilegeLevel="0"></privilege>
+				<privilege id="sy-7201-03" name="全站广告管理修改" privilegeLevel="0"></privilege>
+				<privilege id="sy-7201-04" name="全站广告管理删除" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+
+	</main-module>
+
+	<main-module id="sy-8000" name="营销中心" sortorder="8000">
+		<mid-module id="sy-4400" name="邮件发送" sortorder="4400"
+			isOften="1">
+			<module id="sy-4401" name="会员邮件发送" linkaddr="mail/mail"
+				sortorder="4401">
+				<privilege id="sy-4401-02" name="会员邮件发送" privilegeLevel="0"></privilege>
+				<privilege id="sy-4401-03" name="发送记录查看"></privilege>
+			</module>
+			<module id="sy-4402" name="群组邮件发送" linkaddr="mail/groupMail"
+				sortorder="4402">
+				<privilege id="sy-4402-01" name="群组邮件发送"></privilege>
+				<privilege id="sy-4402-02" name="发送记录查看"></privilege>
+			</module>
+			<module id="sy-4403" name="节日邮件发送" linkaddr="mail/holidayMail"
+				sortorder="4403">
+				<privilege id="sy-4403-01" name="定时邮件发送"></privilege>
+				<privilege id="sy-4403-02" name="发送记录查看"></privilege>
+			</module>
+			<module id="sy-4404" name="生日邮件发送" linkaddr="mail/birthday"
+				sortorder="4404">
+				<privilege id="sy-4404-01" name="定时邮件发送"></privilege>
+				<privilege id="sy-4404-02" name="发送记录查看"></privilege>
+			</module>
+			<module id="sy-4405" name="邮件发送记录" linkaddr="mail/record"
+				sortorder="4405">
+				<privilege id="sy-4405-01" name="发送记录查看"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-8100" name="活动管理" sortorder="8100">
+			<module id="sy-8101" name="线上活动管理" linkaddr="buss/promotion"
+				sortorder="8101">
+				<privilege id="sy-8101-01" name="线上活动管理查看"></privilege>
+				<privilege id="sy-8101-02" name="线上活动管理添加"></privilege>
+				<privilege id="sy-8101-03" name="线上活动管理修改"></privilege>
+				<privilege id="sy-8101-04" name="线上活动管理删除"></privilege>
+				<privilege id="sy-8101-05" name="开始招募"></privilege>
+				<privilege id="sy-8101-06" name="停止招募"></privilege>
+				<privilege id="sy-8101-07" name="审核商户"></privilege>
+				<privilege id="sy-8101-08" name="维护参与商户"></privilege>
+				<privilege id="sy-8101-09" name="终止活动"></privilege>
+				<privilege id="sy-8101-10" name="修改结束时间"></privilege>
+				<privilege id="sy-8101-11" name="报名参与"></privilege>
+				<privilege id="sy-8101-12" name="查看审核结果"></privilege>
+				<privilege id="sy-8101-13" name="开始活动"></privilege>
+
+			</module>
+		</mid-module>
+		<mid-module id="sy-8200" name="评价管理" sortorder="8200">
+			<module id="sy-8201" name="评价管理" linkaddr="evaluation/evaluation"
+				sortorder="8201">
+				<privilege id="sy-1203-01" name="评价统计查看"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-8300" name="站内信" sortorder="8300">
+			<module id="sy-8301" name="站内信" linkaddr="internalMessage/internalMessage"
+				sortorder="8301">
+				<privilege id="sy-8301-01" name="站内信发送" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+	</main-module>
+	<main-module id="sy-9000" name="系统维护" sortorder="9000">
+		<mid-module id="sy-9100" name="操作员管理" sortorder="9100">
+			<module id="sy-9101" name="模块管理" linkaddr="system/module"
+				sortorder="9101">
+				<privilege id="sy-9101-01" name="模块查看" privilegeLevel="0"></privilege>
+				<privilege id="sy-9101-02" name="模块维护" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-9102" name="角色管理" linkaddr="system/role"
+				sortorder="9102">
+
+				<privilege id="sy-9102-01" name="角色查看"></privilege>
+				<privilege id="sy-9102-02" name="角色添加"></privilege>
+				<privilege id="sy-9102-03" name="角色修改"></privilege>
+				<privilege id="sy-9102-04" name="角色删除"></privilege>
+			</module>
+			<module id="sy-9103" name="用户管理" linkaddr="system/user"
+				sortorder="9103">
+				<privilege id="sy-9103-01" name="用户查看"></privilege>
+				<privilege id="sy-9103-02" name="用户添加"></privilege>
+				<privilege id="sy-9103-03" name="用户修改"></privilege>
+				<privilege id="sy-9103-04" name="用户删除"></privilege>
+				<privilege id="sy-9103-05" name="初始化密码"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-9700" name="日志管理" sortorder="9700">
+			<module id="sy-9701" name="操作日志" linkaddr="log/operators"
+				sortorder="9701">
+				<privilege id="sy-9701-01" name="操作日志查看"></privilege>
+				<privilege id="sy-9701-02" name="操作日志删除"></privilege>
+			</module>
+			<module id="sy-9702" name="功能日志" linkaddr="log/functions"
+				sortorder="9702">
+				<privilege id="sy-9702-01" name="功能日志查看"></privilege>
+				<privilege id="sy-9702-02" name="功能日志删除"></privilege>
+			</module>
+		</mid-module>
+		<!--
+			<mid-module id="sy-9800" name="商户运营参数" sortorder="9800"> <module
+			id="sy-9801" name="网站提醒" linkaddr="log/siteRemindInfo"
+			sortorder="9801"> <privilege id="sy-9801-01" name="保存"></privilege>
+			<privilege id="sy-9801-02" name="回复默认设置"></privilege> </module>
+
+			</mid-module>
+		-->
+		<mid-module id="sy-6200" name="商城业务参数配置" sortorder="6200">
+			<module id="sy-6201" name="商城业务参数" linkaddr="buss/serviceparams"
+				sortorder="6201">
+				<privilege id="sy-6201-01" name="添加业务参数" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-9801" name="网站提醒" linkaddr="log/siteRemindInfo"
+				sortorder="9801">
+				<privilege id="sy-9801-01" name="保存"></privilege>
+				<privilege id="sy-9801-02" name="回复默认设置"></privilege>
+			</module>
+		</mid-module>
+
+		<mid-module id="sy-6300" name="外部服务参数配置" sortorder="6100">
+			<module id="sy-6301" name="支付接口配置" linkaddr="buss/payparam"
+				sortorder="6301">
+				<privilege id="sy-6301-01" name="添加支付接口配置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6301-02" name="查看支付接口配置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6301-03" name="修改支付接口配置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6301-04" name="删除支付接口配置" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-6400" name="邮件服务器设置" linkaddr="mail/mailserver"
+				sortorder="6400">
+				<privilege id="sy-6400-01" name="添加服务器设置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6400-02" name="查看服务器设置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6400-03" name="修改服务器设置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6400-04" name="删除服务器设置" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-6500" name="短信常用模版设置" linkaddr="message/smstemaction"
+				sortorder="6500">
+				<privilege id="sy-6500-01" name="保存短信模版" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-6601" name="邮件常用模版设置" linkaddr="mail/EmailTemplate"
+				sortorder="6600">
+				<privilege id="sy-6601-01" name="保存邮件模版" privilegeLevel="0"></privilege>
+				<privilege id="sy-6601-02" name="修改邮件模版" privilegeLevel="0"></privilege>
+				<privilege id="sy-6601-03" name="全部重置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6601-04" name="单条重置" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-6602" name="QQ客服设置" linkaddr="member/customService"
+				sortorder="6600">
+				<privilege id="sy-6602-01" name="QQ客服设置" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+		<mid-module id="sy-6700" name="运营支持" sortorder="6700">
+			<module id="sy-6701" name="短信服务器配置" linkaddr="stock/messServParamConfig"
+				sortorder="6701">
+				<privilege id="sy-6701-01" name="添加短信服务配置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6701-02" name="查看短信服务配置" privilegeLevel="0"></privilege>
+				<privilege id="sy-6701-03" name="修改短信服务配置" privilegeLevel="0"></privilege>
+			</module>
+			<module id="sy-6600" name="配送方式管理" linkaddr="buss/deliverymode"
+				sortorder="6702">
+				<privilege id="sy-6600-01" name="添加配送方式" privilegeLevel="0"></privilege>
+				<privilege id="sy-6600-02" name="查看配送方式" privilegeLevel="0"></privilege>
+				<privilege id="sy-6600-03" name="修改配送方式" privilegeLevel="0"></privilege>
+				<privilege id="sy-6600-04" name="删除配送方式" privilegeLevel="0"></privilege>
+			</module>
+		</mid-module>
+
+	</main-module>
+</init-config>

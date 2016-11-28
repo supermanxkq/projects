@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 报表管理 -->
+	<package name="report-z" namespace="/report" extends="globalResult">   
+	   	<!-- 报表查看查看 -->
+	     
+    	<action name="saleCardRecord" class="/report/saleCardRecord">
+			<result name="list">/WEB-INF/page/report/saleCardRecord.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	
+    	<action name="merconstotal" class="/report/merconstotal">
+			<result name="list">/WEB-INF/page/report/merConsList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>   
+    		 
+        <action name="memconsanalyaction" class="/report/memconsanalyaction">
+			<result name="list">/WEB-INF/page/report/memConsAnalyList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>   
+    	
+    	<action name="regMemTotalAction" class="/report/regMemTotalAction">
+			<result name="list">/WEB-INF/page/report/registerMemTotalList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>   
+    </package>
+    
+    <!-- 短信费管理 -->
+    <package name="message" namespace="/message" extends="globalResult">       
+        <action name="messageparam" class="/message/messageparam">
+            <result name="list">/WEB-INF/page/message/messParamList.jsp</result>
+            <result name="input">/WEB-INF/page/message/messParamSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>
+        <action name="messagerelation" class="/message/messagerelation">
+        	<result name="list">/WEB-INF/page/message/messRelationList.jsp</result>
+        	<result name="input">/WEB-INF/page/message/messRelationSet.jsp</result>
+        	<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>   
+    </package>
+    
+    <!-- 购油申请 -->
+    <package name="buyoilappl" namespace="/buyoilappl" extends="globalResult">
+        <action name="buyoilapplaction" class="/buyoilappl/buyoilapplaction">
+            <result name="list">/WEB-INF/page/order/buyoilAppl/buyOilAppList.jsp</result>
+            <result name="input">/WEB-INF/page/order/buyoilAppl/buyOilAppSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>
+    </package>
+    
+    <!-- 油价信息管理 -->
+    <package name="oilprice" namespace="/oilprice" extends="globalResult">
+        <action name="oilpriceaction" class="/oilprice/oilpriceaction">
+            <result name="list">/WEB-INF/page/base/oilprice/oilpriceList.jsp</result>
+            <result name="input">/WEB-INF/page/base/oilprice/oilpriceSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>
+    
+    <!-- 油厂信息管理 -->
+    <package name="oilfactory" namespace="/oilfactory" extends="globalResult">
+        <action name="oilfactoryaction" class="/oilfactory/oilfactoryaction">
+            <result name="list">/WEB-INF/page/base/oilfactory/oilfactoryList.jsp</result>
+            <result name="input">/WEB-INF/page/base/oilfactory/oilfactorySet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>
+    
+    <!-- 商品分类管理 -->
+    <package name="goodsFamily" namespace="/base" extends="globalResult">
+        <action name="goodsfamily" class="/base/goodsfamily">
+            <result name="list">/WEB-INF/page/base/goodsfamily/goodsFamilyList.jsp</result>
+            <result name="input">/WEB-INF/page/base/goodsfamily/goodsFamilySet.jsp</result>
+            <interceptor-ref name="fileUpload">
+    			<!-- 配置允许上传的文件类型 -->
+    			<param name="allowedTypes">image/png,image/x-png,image/pjpeg,image/jpeg</param>
+    			<!-- 配置允许上传的文件大小 -->
+    			<param name="maximumSize">1048576</param>
+    		</interceptor-ref>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>
+    
+    <!-- 邮件服务器设置 -->
+    <package name="mailServer" namespace="/mail" extends="globalResult">
+        <action name="mailserver" class="/mail/mailserver">
+            <result name="list">/WEB-INF/page/buss/mailServer/mailServerList.jsp</result>
+            <result name="input">/WEB-INF/page/buss/mailServer/mailServerSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>
+    
+    <!-- 短信常用模版设置 -->
+    <package name="smsTem" namespace="/message" extends="globalResult">
+        <action name="smstemaction" class="/message/smstemaction">
+            <result name="list">/WEB-INF/page/buss/smsTem/smsTemSet.jsp</result>
+            <result name="input">/WEB-INF/page/buss/smsTem/smsTemSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>   
+    
+    <!-- 会员等级管理 -->
+    <package name="memGrade" namespace="/memGrade" extends="globalResult">
+        <action name="memGrade" class="/memGrade/memGrade">
+            <result name="list">/WEB-INF/page/member/memGrade/memGradeList.jsp</result>
+            <result name="input">/WEB-INF/page/member/memGrade/memGradeSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>   
+    
+    <!-- 会员积分规则 -->
+    <package name="memCreditRule" namespace="/member" extends="globalResult">
+        <action name="memCreditRule" class="/member/memCreditRule">
+            <result name="list">/WEB-INF/page/member/memCredit/memCreditList.jsp</result>
+            <result name="input">/WEB-INF/page/member/memCredit/memCreditSet.jsp</result>
+            <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+        </action>      
+    </package>   
+    
+</struts>

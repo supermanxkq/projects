@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="buss" namespace="/buss" extends="globalResult">
+    	<!-- 活动管理 -->
+    	<action name="promotion" class="/buss/promotion">
+			<result name="list">/WEB-INF/page/buss/promotion/promotionList.jsp</result>
+			<result name="input">/WEB-INF/page/buss/promotion/promotionSet.jsp</result>
+			<result name="checkRecordList">/WEB-INF/page/buss/promotion/checkRecordList.jsp</result>
+			
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    </package>
+    <package name="orders" namespace="/orders" extends="globalResult">
+    	<!-- 订单管理 -->
+    	<action name="orders" class="/orders/orders">
+			<result name="list">/WEB-INF/page/order/order/orderList.jsp</result>
+			<result name="updatePriceUI">/WEB-INF/page/order/order/updatePrice.jsp</result>
+			<result name="extendDaysUI">/WEB-INF/page/order/order/extendDays.jsp</result>
+			<result name="orderUI">/WEB-INF/page/order/order/orderInfo.jsp</result>
+			<result name="sendOrderUI">/WEB-INF/page/order/order/sendOrderInfo.jsp</result>
+			
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    </package>
+   
+   
+</struts>

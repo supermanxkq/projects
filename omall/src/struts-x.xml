@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="base-x" namespace="/base" extends="globalResult">
+		<!-- 终端管理 -->
+		<action name="terminals" class="/base/terminals">
+			<result name="list">/WEB-INF/page/base/terminals/terminalsList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/base/terminals/terminalsSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 收单关系管理 -->
+		<action name="sinrelation" class="/base/sinrelation">
+			<result name="list">/WEB-INF/page/base/singlerelation/sinrelationList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/base/singlerelation/sinrelationSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 商户充值限额 -->
+		<action name="merrechlimit" class="/base/merrechlimit">
+			<result name="list">/WEB-INF/page/base/merrechlimit/merrechlimitList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/base/merrechlimit/merrechlimitSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 商户机构功能设置 -->
+		<action name="mofswitch" class="/base/mofswitch">
+			<result name="list">/WEB-INF/page/base/mofswitch/mofswitchList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/base/mofswitch/mofswitchSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 商户等级模型 -->
+		<action name="merlevel" class="/base/merlevel">
+		      <result name="list">/WEB-INF/page/base/merchants/merLevelModel.jsp</result>
+		      <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+	<package name="stock-x" namespace="/stock" extends="globalResult">
+		<!-- 库存管理-总部入库 -->
+		<action name="headquin" class="/stock/headquin">
+			<result name="list">/WEB-INF/page/stock/headquartin/headQuInList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/headquartin/headQuInSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 库存管理-机构领卡 -->
+		<action name="orgcard" class="/stock/orgcard">
+			<result name="list">/WEB-INF/page/stock/organstock/organStockList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/organstock/organStockSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 库存管理-商户领卡 -->
+		<action name="mercard" class="/stock/mercard">
+			<result name="list">/WEB-INF/page/stock/merstock/merStockList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/merstock/merStockSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 库存管理-卡库存量查看 -->
+		<action name="cardstock" class="/stock/cardStock">
+			<result name="list">/WEB-INF/page/stock/cardstock/cardStockList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/merstock/merStockSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+
+	</package>
+	<package name="report-x" namespace="/report" extends="globalResult">
+		<!-- 报表查询-商户结算 -->
+		<action name="mersettle" class="/report/mersettle">
+			<result name="list">/WEB-INF/page/report/merSettList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 报表查询-交易报表 -->
+		<action name="tradesview" class="/report/tradesview">
+			<result name="list">/WEB-INF/page/report/tradesViewList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+	<!-- 模块管理 -->
+	<package name="module-x" namespace="/report" extends="globalResult">
+		<!-- 模块管理列表页面 -->
+		<action name="module" class="/system/module">
+			<result name="list">/WEB-INF/page/system/module/moduleList.jsp</result>
+			<!--<result name="objResult">/WEB-INF/page/report/merSettList.jsp</result>
+			--><interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		
+	</package>
+		<!-- 业务参数管理 -->
+	<package name="buss-x" namespace="/buss" extends="globalResult">
+		<!-- 支付参数配置列表页面 -->
+		<action name="payparam" class="/buss/payparam">
+			<result name="list">/WEB-INF/page/buss/payparamList.jsp</result>
+			<result name="input">/WEB-INF/page/buss/payparamSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+                 <action name="deliverymode" class="/buss/deliverymode">
+    		<result name="list">/WEB-INF/page/buss/deliveryModeList.jsp</result>
+    		<result name="input">/WEB-INF/page/buss/deliveryModeSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		
+	</package>
+</struts>

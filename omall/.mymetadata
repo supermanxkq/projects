@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="omall"
+  id="myeclipse.1403835771082"
+  context-root="/omall"
+  j2ee-spec="5.0"
+  archive="omall.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

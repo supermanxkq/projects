@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!-- 业务交易报表 -->
+	<package name="report-wsh" namespace="/report" extends="globalResult">
+		<!-- 交易记录查询 -->
+		<action name="btrades" class="/report/btrades">
+			<result name="list">/WEB-INF/page/report/bTradesInfoList.jsp</result>
+			<result name="successList">/WEB-INF/page/report/bTradesSuccessList.jsp</result>
+			<result name="failList">/WEB-INF/page/report/bTradesFailList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+		<!-- 积分消费记录查询 -->
+		<action name="itrades" class="/report/itrades">
+			<result name="list">/WEB-INF/page/report/ITradesList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+	
+	<!-- 退款管理 -->
+	<package name="orders-wsh" namespace="/orders" extends="globalResult">
+		<action name="remoney" class="/orders/remoney">
+			<result name="list">/WEB-INF/page/order/order/reMoneyList.jsp</result>
+			<result name="input">/WEB-INF/page/order/order/reMoneySet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+
+</struts>

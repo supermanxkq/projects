@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 指定国际化资源文件的baseName为messageResource -->
+	<constant name="struts.custom.i18n.resources" value="message_zh_CN" />
+
+	<!-- 设置该应用使用的解码集 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.multipart.maxSize" value="9000000" />
+	<!-- 运营支持 -->
+	<package name="stock-xkq" namespace="/stock" extends="globalResult">
+		<!-- 短信服务器配置 -->
+		<action name="messServParamConfig" class="/stock/messServParamConfig">
+			<result name="list">/WEB-INF/page/stock/messServParamConfig/messServParamConfigList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/messServParamConfig/messServParamConfigSet.jsp
+			</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+	<!-- 服务中心信息管理 -->
+	<package name="servicelist-xkq" namespace="/stock" extends="globalResult">
+		<!-- 服务清单 -->
+		<action name="servicelist" class="/stock/servicelist">
+			<result name="list">/WEB-INF/page/stock/serviceList/servicesList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/stock/serviceList/serviceListSet.jsp
+			</result>
+		</action>
+	</package>
+	<!--店铺管理  -->
+	<package name="base-xkq" namespace="/base" extends="globalResult">
+		<interceptors>
+			<interceptor-stack name="myDefaultStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="profiling" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload">
+				<!--image/jpeg,image/pjpeg,image/png,image/bmp  
+					<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/pjpeg</param>
+					-->
+					<param name="maximumSize">9000000</param>
+				</interceptor-ref>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params" />
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation" />
+				<interceptor-ref name="workflow" />
+			</interceptor-stack>
+		</interceptors>
+		<!-- 店铺基本设置 -->
+		<action name="storeInfo" class="/base/storeInfo">
+			<interceptor-ref name="myDefaultStack"></interceptor-ref>
+			<result name="list">/WEB-INF/page/base/storeManage/storeInfo/storeInfoSet.jsp
+			</result>
+			<result name="input">/WEB-INF/page/base/storeManage/storeInfo/inputError.jsp
+			</result>
+		</action>
+	</package>
+	<!-- 商品属性值管理 -->
+	<package name="attrEntity-xkq" namespace="/base" extends="globalResult">
+		<!-- 商品属性值管理 -->
+		<action name="attrEntity" class="/base/attrEntity">
+			<result name="list">/WEB-INF/page/goods/attrentity/GoodsAttributesList.jsp
+			</result>
+			<result name="show">/WEB-INF/page/goods/attrentity/AttrEntityList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/goods/attrentity/AttrEntitySet.jsp
+			</result>
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件类型 -->
+    			<param name="allowedTypes">application/vnd.ms-excel</param>
+    			<!-- 配置允许上传的文件大小 -->
+    			<param name="maximumSize">1048576</param>
+    		</interceptor-ref>
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	<!-- 站内信管理 -->
+	<package name="internalMessage-xkq" namespace="/internalMessage"
+		extends="globalResult">
+		<!-- 站内信管理 -->
+		<action name="internalMessage" class="/internalMessage/internalMessage">
+			<result name="list">/WEB-INF/page/internalMessage/internalMessageList.jsp
+			</result>
+			<result name="input">/WEB-INF/page/internalMessage/internalMessageSet.jsp
+			</result>
+		</action>
+	</package>
+</struts>

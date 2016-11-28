@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="base-zjl" namespace="/base" extends="globalResult">
+		<action name="merscomo" class="/base/merscomo">
+			<result name="list">/WEB-INF/page/base/merscomo/merScoMoList.jsp</result>	
+			<result name="input">/WEB-INF/page/base/merscomo/merScoMoSet.jsp</result>	
+		</action>   
+    </package>
+     <!-- 导入商品分类管理 -->
+    <package name="uploadGoodsFamily" namespace="/base" extends="globalResult">
+        <action name="uploadGoodsFamily" class="/base/uploadGoodsFamily">
+            <result name="list">/WEB-INF/page/base/goodsfamily/goodsFamilyList.jsp</result>
+            <result name="input">/WEB-INF/page/base/goodsfamily/uploadResult.jsp</result>	
+            <interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件类型 -->
+    			<param name="allowedTypes">application/vnd.ms-excel</param>
+    			<!-- 配置允许上传的文件大小 -->
+    			<param name="maximumSize">1048576</param>
+    		</interceptor-ref>
+    		 <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>      
+    </package>
+    <package name="account-zjl" namespace="/account" extends="globalResult">   
+	   	<!-- 账户查看 -->
+    	<action name="ogaccounts" class="/account/ogaccounts">
+			<result name="organList">/WEB-INF/page/account/accounts/accountsPsw.jsp</result>
+			<result name="memList">/WEB-INF/page/account/accounts/accountsMemPsw.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+    </package>
+</struts>

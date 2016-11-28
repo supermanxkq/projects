@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<include file="struts-m.xml"></include>
+	<include file="struts-j.xml"></include>
+	<include file="struts-x.xml"></include>
+	<include file="struts-z.xml"></include>
+	<include file="struts-g.xml"></include>
+	<include file="struts-gy.xml"></include>
+	<include file="struts-cj.xml"></include>
+	<include file="struts-xwx.xml"></include>
+	<include file="struts-order.xml"></include>
+	<include file="struts-wn.xml"></include>
+	<include file="struts-report.xml"></include>
+	<include file="struts-l.xml"></include>
+	<include file="struts-wy.xml"></include>
+	<include file="struts-mfl.xml"></include>
+	<include file="struts-zyy.xml"></include>
+	<include file="struts-zgf.xml"></include>
+	<include file="struts-zrq.xml"></include>
+	<include file="struts-xkq.xml"></include>
+	<include file="struts-ywy.xml"></include>
+	<include file="struts-annount.xml"></include>
+	<include file="struts-advertma.xml"></include>
+	<include file="struts-siteRemindInfo.xml"></include>
+		<include file="struts-zjl.xml"></include>
+	<include file="struts-emailTemplate.xml"></include>
+	<include file="struts-wsh.xml"></include>
+	<include file="struts-lxy.xml"></include>
+	<!-- 配置全局结果 -->
+    <package name="globalResult" namespace="/globalResult" extends="json-default">
+    	<interceptors>
+			<interceptor name="authorityInterceptor" class="com.paySystem.ic.web.interceptor.AuthorityInterceptor"></interceptor>
+			<interceptor name="permissionInterceptor" class="com.paySystem.ic.web.interceptor.PermissionInterceptor"></interceptor>
+			<interceptor-stack name="systemInterceptorStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="authorityInterceptor"></interceptor-ref>
+				<interceptor-ref name="permissionInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+    	<global-results>
+    		<result name="tourl" type="redirect">${tourl}</result>
+    		<result name="index">/index.jsp</result>
+    		<result name="login">/WEB-INF/page/index/login.jsp</result>
+    		<result name="tool">/WEB-INF/page/index/tool.jsp</result>
+    		<result name="outlinehtml">/outlinehtml.jsp</result>
+    		<result name="intercepthtml">/intercepthtml.jsp</result>
+    		<result name="error">/error.jsp</result>
+    		<result name="exception">/exception.jsp</result>
+    		<result name="success">/success.jsp</result>
+    		<result name="successclose">/successClose.jsp</result>
+    		<result name="invalid.token">/token.jsp</result>
+			<result name="objResult" type="json">
+				<param name="includeProperties"> 
+            		objResult.*
+        		</param> 
+        		<param name="noCache">true</param>  
+       			<param name="ignoreHierarchy">false</param>  
+			</result>
+			<result name="ajaxsuccess" type="json">
+				<param name="includeProperties"> 
+            		ajaxResult,msgResult
+        		</param>
+        		<param name="contentType">text/html</param>
+        		<param name="noCache">true</param>
+       			<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="ajaxfailure" type="json">
+				<param name="includeProperties"> 
+            		ajaxResult,msgResult
+        		</param> 
+        		<param name="noCache">true</param>  
+       			<param name="ignoreHierarchy">false</param>  
+			</result>
+			<result name="pageHtml" type="json">
+				<param name="includeProperties"> 
+            		ajaxResult
+        		</param> 
+        		<param name="noCache">true</param>  
+       			<param name="ignoreHierarchy">false</param>  
+			</result>
+    	</global-results>
+    	<global-exception-mappings>
+    		<exception-mapping result="exception" exception="java.lang.Exception"/>
+    	</global-exception-mappings>
+    </package>
+	<package name="system" namespace="/system" extends="globalResult">
+    	<action name="init" class="/system/init">
+    		<result name="success">/init.jsp</result>
+    	</action>
+        <action name="base" class="/system/base">
+			
+    	</action>
+    	<action name="login" class="/system/login">
+			<result name="main" type="redirect">${tourl}</result>
+			<result name="download" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">10485760</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name=""></param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+    	<action name="index" class="/system/index">
+			<result name="top">/WEB-INF/page/index/top.jsp</result>
+			<result name="right">/WEB-INF/page/index/right.jsp</result>
+			<result name="left">/WEB-INF/page/index/left.jsp</result>
+			<result name="firstleft">/WEB-INF/page/index/firstleft.jsp</result>
+			<result name="separate">/WEB-INF/page/index/separate.jsp</result>
+			<result name="footer">/WEB-INF/page/index/footer.jsp</result>
+			<result name="main">/WEB-INF/page/index/main.jsp</result>
+			<result name="logout">/WEB-INF/page/index/logout.jsp</result>
+			<result name="myself">/WEB-INF/page/index/myself.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="authorityInterceptor"></interceptor-ref>
+    	</action>
+    	<action name="role" class="/system/role">
+			<result name="list">/WEB-INF/page/system/role/roleList.jsp</result>
+			<result name="input">/WEB-INF/page/system/role/roleSet.jsp</result>
+			<result name="privilegeTree">/WEB-INF/page/system/role/privilegeTree.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>	
+    	</action>
+    	<action name="module" class="/system/module">
+			<result name="list">/WEB-INF/page/system/module/moduleList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	<!-- 用户管理 -->
+    	<action name="user" class="/system/user">
+			<result name="list">/WEB-INF/page/system/user/userList.jsp</result>
+			<result name="input">/WEB-INF/page/system/user/userSet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	
+    	<!-- 地区管理 -->
+    	<action name="area" class="/system/area">
+			<result name="list">/WEB-INF/page/system/area/areaList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    	
+    	<!-- UKEY管理 -->
+    	<action name="ukey" class="/system/ukey">
+			<result name="input">/WEB-INF/page/system/ukey/ukeySet.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>
+    </package>
+    
+</struts>    

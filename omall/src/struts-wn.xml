@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     <!-- 报表管理 -->
+	<package name="report-wn" namespace="/report" extends="globalResult">   
+	   	<!-- 报表查看查看 -->
+	     
+    	<action name="saleCardRecord" class="/report/saleCardRecord">
+			<result name="list">/WEB-INF/page/report/saleCardRecord.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action>  
+	   	<!-- 终端消费汇总 -->
+	   	<action name="termConsTotalList" class="/report/termConsTotalList">
+			<result name="list">/WEB-INF/page/report/termConsTotalList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    	 <!-- 库存变动查看 -->
+	   <action name="modStockList" class="/report/modStockList">
+	        <result name="list1">/WEB-INF/page/report/modStockList.jsp</result>
+	        <interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+	   </action>	
+	   
+	   <!-- 推荐人收益报表 -->
+	   <action name="recommProceeds" class="/report/recommProceeds">
+	        <result name="list">/WEB-INF/page/report/recommProceedsList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+	   </action>
+	   <!-- 销售额汇总 -->
+	    <action name="salesSummary" class="/report/salesSummary">
+	        <result name="list">/WEB-INF/page/report/salesSummaryList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+	   </action>
+	   <!-- 会员购物量排名汇总 -->
+	   <action name="memShopSum" class="/report/memShopSum">
+	        <result name="list">/WEB-INF/page/report/memShoppingSumList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+	   </action>
+	    <!-- 商品销量汇总排名 -->
+    	<action name="goodSaleSum" class="/report/goodSaleSum">
+			<result name="list">/WEB-INF/page/report/goodSaleSumList.jsp</result>
+			<interceptor-ref name="systemInterceptorStack"></interceptor-ref>
+    	</action> 
+    </package>
+    <!-- 异常管理 -->
+    <package name="abnorTrades-wn" namespace="/abnorTrades" extends="globalResult">
+      <!-- 异常交易处理 -->
+      <action name="abnorTradesDealList" class="/abnorTrades/abnorTradesDealList">
+         <result name="list">/WEB-INF/page/abnorTrades/abnorTradesDealList.jsp </result>
+      </action>
+    </package>
+    
+    <!-- 企业信息管理 -->
+    <package name="compInfo-wn" namespace="/base" extends="globalResult">
+      <action name="compInfo" class="/base/compInfo">
+         <result name="list">/WEB-INF/page/base/compInfo/compInfoList.jsp </result>
+         <result name="input">/WEB-INF/page/base/compInfo/compInfoSet.jsp </result>
+      </action>
+    </package>
+    <!-- 支付接口配置 -->
+    <package name="payInterface-wn" namespace="/payInterface" extends="globalResult">
+       <action name="payInterfaceConfig" class="/payInterface/payInterfaceConfig">
+          <result name="list">/WEB-INF/page/payInterfaceConfig/payInterConfList.jsp</result>
+          <result name="input">/WEB-INF/page/payInterfaceConfig/payInterConfSet.jsp</result>
+       </action>
+    </package>
+     <!-- 商城业务参数配置 -->
+     <package name="buss-wn" namespace="/buss" extends="globalResult">
+          <action name="serviceparams" class="/buss/serviceparams">
+             <result name="input">/WEB-INF/page/stock/serviceparams/bussParamsConfig.jsp</result>
+          </action>
+     </package>
+    
+     <package name="member-wn" namespace="/member" extends="globalResult">
+          <action name="memConsPntsRule" class="/member/memConsPntsRule">
+             <result name="input">/WEB-INF/page/member/memConsPntsRule/memConsPntsRuleSet.jsp</result>
+          </action>
+     </package>
+     <!-- 待处理业务查看 -->
+     <package name="undeal-wn" namespace="/service" extends="globalResult">
+          <action name="undealService" class="/service/undealService">
+             <result name="list">/WEB-INF/page/base/undealService/undealServiceList.jsp</result>
+          </action>
+     </package>
+     <!-- 首界面内容展示-->
+     <package name="home-wn" namespace="/homePage" extends="globalResult">
+          <action name="homePageShow" class="/homePage/homePageShow">
+             <result name="list">/WEB-INF/page/index/right.jsp</result>
+          </action>
+     </package>
+</struts>
